@@ -4,24 +4,25 @@ camera =
 	left = 0,
 	right = 0,
 	top = 0,
-	bottom = 0
+	bottom = 0,
+	player = nil
 }
 function camera.init(width, height)
 	camera.width =  width
 	camera.height = height
 end
-function camera.move(x, y, actor)
-	camera.x = x
-	camera.y = y
-	camera.actor = actor
-	if x and y then
-		camera.left = x - 15
+function camera.move(player)
+	camera.x = player.x
+	camera.y = player.y
+	camera.player = player
+	if camera.x and camera.x then
+		camera.left = camera.x - 15
 		if camera.left < 0 then camera.left = 0 end
-		camera.right = x + 15
+		camera.right = camera.x + 15
 		if camera.right > camera.width then camera.right = camera.width end
-		camera.top = y - 10
+		camera.top = camera.y - 10
 		if camera.top < 0 then camera.top = 0 end
-		camera.bottom = y + 10
+		camera.bottom = camera.y + 10
 		if camera.bottom > camera.height then camera.bottom = camera.height end
 	end
 end
@@ -35,9 +36,14 @@ function camera.isactorincamera(actor)
 	end
 end
 
-function camera.getposincamera(x, y)
+function camera.getposincamera(x, y, offset)
+	if not offset then
+	return (x - camera.left) * const.mapcellwidth - camera.player.offsetx, 
+		(y - camera.top) * const.mapcellheight - camera.player.offsety
+	else
 	return (x - camera.left) * const.mapcellwidth, 
 		(y - camera.top) * const.mapcellheight
+	end
 end
 
 function camera.getposinscene(x, y)

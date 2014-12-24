@@ -42,9 +42,11 @@ end
 
 function scene.update(dt)
 	scene.tick = scene.tick + math.floor(dt * 1000)
-	map.move(scene.player)
-	map.update(scene.player)
-	map.setactorposition(scene.player)
+	
+	scene.player:update(scene.tick)
+	map.move()
+	map.update()
+	map.setactorposition()
 	for i,v in ipairs(actormgr.actorlist) do
 		v:update(scene.tick)
 	end
@@ -83,20 +85,16 @@ function scene.msg_loadmap()
 	map.loadmap("map.png")
 end
 
-function scene.msg_createactor()
-	actor:setposition(100, 100)
-end
-
 function scene.msg_createplayer( ... )
-	local actor = actormgr.newactor(scene, 100, 1, "布衣")
+	local actor = actormgr.newplayer(scene, 100, 1, "布衣")
 	actor.x = 20
 	actor.y = 10
 	actor.dir = 4
 	scene.player = actor
-		
-	map.move(actor)
-	map.update(actor)
-	map.setactorposition(actor)
+	map.focusactor(actor)
+	map.move()
+	map.update()
+	map.setactorposition()
 
 	actor = actormgr.newactor(scene, 100, 1, "布衣")
 	actor.x = 10

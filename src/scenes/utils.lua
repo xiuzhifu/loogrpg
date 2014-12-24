@@ -1,10 +1,5 @@
-local utils = {}
-function utils.righty(y)
-	return display.height - y
-end
-
-function utils.getxydirectionbydir(dir)
-	local actordir = {
+local utils = {
+	actordir = {
 		{0, -1},--0
 		{1, -1},--1
 		{1, 0},--2
@@ -14,8 +9,14 @@ function utils.getxydirectionbydir(dir)
 		{-1, 0},--6
 		{-1, -1}--7
 	}
-	if dir >= 0 and dir <=6 then
-		return actordir[dir + 1][1], actordir[dir + 1][2]
+}
+function utils.righty(y)
+	return display.height - y
+end
+
+function utils.getxydirectionbydir(dir)
+	if dir >= 0 and dir <=7 then
+		return utils.actordir[dir + 1][1], utils.actordir[dir + 1][2]
 	end
 end
 function utils.getdir(x, y, targetx, targety)

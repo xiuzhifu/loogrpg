@@ -6,8 +6,7 @@ local utils = require "utils"
 actor.__index = actor
 
 function actor.new(config)
-	local t = {}
-	setmetatable(t, actor)
+	local t = setmetatable({}, actor)
 	t.name = ""
 	t.id = 0
 	t.x = 0
@@ -60,29 +59,19 @@ function actor:setweapon(weapon)
 	end
 end
 
-local actordir = {
-	{0, -1},--0
-	{1, -1},--1
-	{1, 0},--2
-	{1, 1},--3
-	{0, 1},--4
-	{-1, 1},--5
-	{-1, 0},--6
-	{-1, -1}--7
-}
 function actor:recalcoffset()
 	local t = const.mapcellwidth * self.movestep / (self.framecount - self.skip)
-	self.offsetx = actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
+	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
 	t = const.mapcellheight * self.movestep / (self.framecount - self.skip)
-	self.offsety = actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
+	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
 end
-function actor:move(tick, player)
+function actor:move(tick)
 	if tick - self.lastframetime > self.frametime then
 		self.currentframe = self.currentframe + 1
 		self.lastframetime = tick
 		if self.currentframe + self.startframe > self.maxframe then 
-			self.x = self.x + actordir[self.dir + 1][1] * self.movestep
-			self.y = self.y + actordir[self.dir + 1][2] * self.movestep
+			self.x = self.x + utils.actordir[self.dir + 1][1] * self.movestep
+			self.y = self.y + utils.actordir[self.dir + 1][2] * self.movestep
 			self.offsetx = 0
 			self.offsety = 0
 			self.currentaction = 0
@@ -92,12 +81,14 @@ function actor:move(tick, player)
 		end	
 		self:draw()
 	end
-	if self.movestep > 0 then
-		self:recalcoffset()
-		local tx, ty = camera.getposincamera(self.x, self.y)
-		self:setposition(tx + self.offsetx, ty + self.offsety)
+	if self.movestep > 0 then self:recalcoffset() end
+	local tx, ty = camera.getposincamera(self.x, self.y)
+	if self.drawx ~= tx or self.drawy ~= ty then
+		self.drawx = tx
+		self.drawy = ty
+		self:setposition(tx, ty)
 	end 
-	return true	
+	return true
 end
 function actor:recalcframe()
 	local act
