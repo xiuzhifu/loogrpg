@@ -1,4 +1,4 @@
-
+local const = require "const"
 -- 0 - disable debug info, 1 - less debug info, 2 - verbose debug info
 DEBUG = 1
 
@@ -18,11 +18,12 @@ LOAD_SHORTCODES_API = true
 CONFIG_SCREEN_ORIENTATION = "landscape"
 
 -- design resolution
-CONFIG_SCREEN_WIDTH  = 960
-CONFIG_SCREEN_HEIGHT = 640
+CONFIG_SCREEN_WIDTH  = const.screenwidth
+CONFIG_SCREEN_HEIGHT = const.screenheight
 
 -- auto scale mode
-CONFIG_SCREEN_AUTOSCALE = "FIXED_HEIGHT"
+--CONFIG_SCREEN_AUTOSCALE = "FIXED_HEIGHT"
+CONFIG_SCREEN_AUTOSCALE = 'NONE'
 
 cc.FileUtils:getInstance():addSearchPath("res/")
 

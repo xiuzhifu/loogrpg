@@ -16,7 +16,6 @@ function map.loadmap(filename)
 	if map.cc_sprite then
 		map.scene:removeChild(0)
 	end
-
 	map.cc_sprite = display.newSprite(map.image)
 	display.align(map.cc_sprite, display.LEFT_TOP)
 	map.scene:addChild(map.cc_sprite)

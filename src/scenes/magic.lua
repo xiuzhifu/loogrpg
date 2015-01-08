@@ -176,7 +176,6 @@ function flyeffect:update(tick, player)
 	end
 
 	if math.abs(runx - tx) < 10 and math.abs(runy - ty) < 10 then
-		print("fuck")
 		if self.targeteffect then
 			if self.target then
 				--target.addeffect(magic.create_actoreffect(self.targeteffect, self.target))

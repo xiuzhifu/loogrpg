@@ -1,5 +1,3 @@
-package.path = package.path..";F:/kuaipan/loogrpg/src/scenes/?.lua"
-package.path = package.path..";/Users/anmeng/快盘/loogrpg/src/scenes/?.lua"
 local actormgr = require "actormgr"
 local utils = require "utils"
 local const = require "const"
@@ -7,6 +5,7 @@ local magicconfig = require "magicconfig"
 local magic = require "magic"
 local magicconfig = require "magicconfig"
 local effectconfig = require "effectconfig"
+local camera = require "camera"
 local scene = {
 	tick = 0,
 	__gc = function()
@@ -17,6 +16,8 @@ local map = require "map"
 local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 
 function scene.new()
+	local socket = require("socket")
+	print(socket._VERSION)
 	scene.scene = display.newScene("myscene")
 	scene.maplayer = display.newNode()
 	scene.actorlayer = display.newNode()
@@ -25,7 +26,7 @@ function scene.new()
 	scene.scene:addChild(scene.actorlayer)
 	scene.scene:addChild(scene.magiclayer)
 
-	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03)
+	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 1)
 
 	map.new(scene.maplayer)
 	scene.msg_loadmap()
@@ -87,9 +88,10 @@ end
 
 function scene.msg_createplayer( ... )
 	local actor = actormgr.newplayer(scene, 100, 1, "布衣")
-	actor.x = 20
-	actor.y = 10
+	actor.x = camera.centerx
+	actor.y = camera.centery
 	actor.dir = 4
+	print(998,actor.x, actor.y)
 	scene.player = actor
 	map.focusactor(actor)
 	map.move()

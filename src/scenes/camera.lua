@@ -5,24 +5,33 @@ camera =
 	right = 0,
 	top = 0,
 	bottom = 0,
+	offsetx = 0, 
+	offsety = 0,
+	centerx =0, 
+	centery =0, 
 	player = nil
 }
 function camera.init(width, height)
 	camera.width =  width
 	camera.height = height
+	camera.centerx = math.floor(const.screenwidth / const.mapcellwidth / 2)
+	camera.centery = math.floor(const.screenheight / const.mapcellheight / 2)
+	camera.offsetx = math.floor((const.screenwidth % const.mapcellwidth) / 2)
+	camera.offsety = math.floor((const.screenheight % const.mapcellheight) / 2)
+	print("ca", camera.centerx, camera.centery, camera.offsetx, camera.offsety)
 end
 function camera.move(player)
 	camera.x = player.x
 	camera.y = player.y
 	camera.player = player
 	if camera.x and camera.x then
-		camera.left = camera.x - 15
+		camera.left = camera.x - camera.centerx
 		if camera.left < 0 then camera.left = 0 end
-		camera.right = camera.x + 15
+		camera.right = camera.x + camera.centerx
 		if camera.right > camera.width then camera.right = camera.width end
-		camera.top = camera.y - 10
+		camera.top = camera.y - camera.centery
 		if camera.top < 0 then camera.top = 0 end
-		camera.bottom = camera.y + 10
+		camera.bottom = camera.y + camera.centery
 		if camera.bottom > camera.height then camera.bottom = camera.height end
 	end
 end
@@ -38,11 +47,11 @@ end
 
 function camera.getposincamera(x, y, offset)
 	if not offset then
-	return (x - camera.left) * const.mapcellwidth - camera.player.offsetx, 
-		(y - camera.top) * const.mapcellheight - camera.player.offsety
+	return (x - camera.left) * const.mapcellwidth - camera.player.offsetx + camera.offsetx, 
+		(y - camera.top) * const.mapcellheight - camera.player.offsety + camera.offsety
 	else
-	return (x - camera.left) * const.mapcellwidth, 
-		(y - camera.top) * const.mapcellheight
+	return (x - camera.left) * const.mapcellwidth + camera.offsetx, 
+		(y - camera.top) * const.mapcellheight + camera.offsety
 	end
 end
 

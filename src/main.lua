@@ -5,7 +5,6 @@ function __G__TRACKBACK__(errorMessage)
     print(debug.traceback("", 2))
     print("----------------------------------------")
 end
-
-require("config")
---display.replaceScene(require("scenes.MainScene").new())
+package.path = package.path..";./src/?.lua;./src/cocos/?.lua;./src/framework/?.lua;./src/scenes/?.lua"
+require("config")	
 display.replaceScene(require("scenes.scene").new())
