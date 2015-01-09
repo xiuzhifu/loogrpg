@@ -16,6 +16,7 @@ $RECYCLE.BIN/
 
 # Compiled Object files
 *.sdf
+*.suo
 *.slo
 *.lo
 *.o
@@ -23,11 +24,11 @@ $RECYCLE.BIN/
 # Compiled Dynamic libraries
 *.so
 *.dylib
-#*.dll
+*.dll
 # Compiled Static libraries
 *.lai
 *.la
-#*.a
+*.a
 *.lib
 # Executables
 *.exe
