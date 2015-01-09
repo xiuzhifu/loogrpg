@@ -18,9 +18,9 @@ function camera.init(width, height)
 	camera.centery = math.floor(const.screenheight / const.mapcellheight / 2)
 	camera.offsetx = math.floor((const.screenwidth % const.mapcellwidth) / 2)
 	camera.offsety = math.floor((const.screenheight % const.mapcellheight) / 2)
-	print("ca", camera.centerx, camera.centery, camera.offsetx, camera.offsety)
 end
 function camera.move(player)
+	if camera.x == player.x and camera.y == player.y then return false end
 	camera.x = player.x
 	camera.y = player.y
 	camera.player = player

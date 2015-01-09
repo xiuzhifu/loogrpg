@@ -45,8 +45,8 @@ function scene.update(dt)
 	scene.tick = scene.tick + math.floor(dt * 1000)
 	
 	scene.player:update(scene.tick)
-	map.move()
-	map.update()
+	map.move(scene.tick)
+	map.update(scene.tick)
 	map.setactorposition()
 	for i,v in ipairs(actormgr.actorlist) do
 		v:update(scene.tick)
@@ -61,7 +61,7 @@ end
 
 function scene.player_move(dir)
 	if dir < 0 or dir > 7 then return end
-	--print(scene.player.x, scene.player.y, dir)
+
 	local act = {ident = const.sm_run, d = dir}
 	scene.player:addaction(act)
 end

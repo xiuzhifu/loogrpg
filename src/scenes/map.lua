@@ -1,9 +1,19 @@
---map¸ñÊ½  ÓÃÈı²ã£¬×îµ×²ãÔ¶´¦£¬´Îµ×²ã½ü´¦£¬¶¥²ãÊµÏÖÕÚµ²¸ú¶¯»­
+--[[
+	1. mode ä¸ºåœ°å›¾å·åŠ¨æ–¹å¼
+		normal æ ¹æ®å›¾ç‰‡å¸§æ•°(ç±»ä¼¼ä¼ å¥‡)
+		flat æŒ‰ç…§åƒç´ 
+		follow æŒ‰åƒç´ ï¼Œåˆ‡é•œå¤´è·Ÿéš(ç±»ä¼¼é­”åŠ›å®è´)
+]]
+local normal = 0
+local flat = 1
+local follow = 2
+
 local map = {
-stops = {},
 x = 0, 
-y = 0
+y = 0,
+mode = flat
 }
+
 local const = require "const"
 local utils = require "utils"
 local camera = require "camera"
@@ -32,6 +42,12 @@ end
 
 function map.focusactor(actor)
 	map.actor = actor
+	local action = actor.action
+	map.walkspeedx = const.mapcellwidth / (action.walk.time * action.walk.count)
+	map.walkspeedy = const.mapcellheight / (action.walk.time * action.walk.count)
+	map.runspeedx = const.mapcellwidth * 2 / (action.run.time * action.run.count)
+	map.runspeedy = const.mapcellheight * 2 / (action.run.time * action.run.count)
+	print("speed", map.runspeedx, map.runspeedy, map.walkspeedx, map.walkspeedy)
 end
 
 function map.setactorposition()

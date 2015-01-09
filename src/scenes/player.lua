@@ -25,7 +25,7 @@ function player:move(tick)
 		end	
 		self:draw()
 	end
-	if self.movestep > 0 then self:recalcoffset() end
+	if self.movestep > 0 then self:recalcoffset(tick) end
 	return true
 end
 return player

@@ -59,7 +59,7 @@ function actor:setweapon(weapon)
 	end
 end
 
-function actor:recalcoffset()
+function actor:recalcoffset(tick)
 	local t = const.mapcellwidth * self.movestep / (self.framecount - self.skip)
 	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
 	t = const.mapcellheight * self.movestep / (self.framecount - self.skip)
@@ -81,7 +81,9 @@ function actor:move(tick)
 		end	
 		self:draw()
 	end
-	if self.movestep > 0 then self:recalcoffset() end
+	if self.movestep > 0 then 
+		self:recalcoffset(tick) 
+	end
 	local tx, ty = camera.getposincamera(self.x, self.y)
 	if self.drawx ~= tx or self.drawy ~= ty then
 		self.drawx = tx
