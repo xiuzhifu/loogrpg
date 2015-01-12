@@ -493,6 +493,9 @@
     <ClInclude Include="..\Classes\src\map.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\src\lmap.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -737,6 +740,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\runtime\FileServer.cpp">
       <Filter>Classes\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\src\map.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\src\lmap.c">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

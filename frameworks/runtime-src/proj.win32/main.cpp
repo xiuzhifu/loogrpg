@@ -15,6 +15,8 @@
 #include <shlguid.h>
 #include <shellapi.h>
 
+#include "map.h"
+
 #include "ProjectConfig/ProjectConfig.h"
 USING_NS_CC;
 

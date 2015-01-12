@@ -16,6 +16,12 @@ local map = require "map"
 local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 
 function scene.new()
+	local map2 =  require "map2"
+
+	for k,v in pairs(map2) do
+		print("2",k,v)
+	end
+
 	local socket = require("socket")
 	print(socket._VERSION)
 	scene.scene = display.newScene("myscene")
@@ -26,7 +32,7 @@ function scene.new()
 	scene.scene:addChild(scene.actorlayer)
 	scene.scene:addChild(scene.magiclayer)
 
-	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 1)
+	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 100)
 
 	map.new(scene.maplayer)
 	scene.msg_loadmap()

@@ -5,6 +5,8 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+*.log
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -16,6 +18,8 @@ $RECYCLE.BIN/
 
 # Compiled Object files
 *.sdf
+*.pdb
+*.ilk
 *.suo
 *.slo
 *.lo

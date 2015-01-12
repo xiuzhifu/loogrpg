@@ -1,5 +1,5 @@
-﻿Build started 2015/1/9 11:40:29.
-     1>Project "E:\loogrpg\frameworks\cocos2d-x\cocos\editor-support\spine\proj.win32\libSpine.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2015/1/12 14:36:47.
+     1>Project "E:\loogrpg\frameworks\cocos2d-x\cocos\editor-support\spine\proj.win32\libSpine.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
          D:\Program Files (x86)\vs12.0\VC\bin\CL.exe /c /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\\" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos\audio\include" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos\editor-support" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\extensions" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos\editor-support" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos\platform" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\cocos\platform\desktop" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\external\glfw3\include\win32" /I"E:\loogrpg\frameworks\cocos2d-x\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _LIB /D COCOS2DXWIN32_EXPORTS /D GL_GLEXT_PROTOTYPES /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TC /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Animation.c ..\AnimationState.c ..\AnimationStateData.c ..\Atlas.c ..\AtlasAttachmentLoader.c ..\Attachment.c ..\AttachmentLoader.c ..\Bone.c ..\BoneData.c ..\BoundingBoxAttachment.c ..\Event.c ..\EventData.c ..\extension.c ..\IkConstraint.c ..\IkConstraintData.c ..\Json.c ..\MeshAttachment.c ..\RegionAttachment.c ..\Skeleton.c ..\SkeletonBounds.c ..\SkeletonData.c ..\SkeletonJson.c ..\Skin.c ..\SkinnedMeshAttachment.c ..\Slot.c ..\SlotData.c
          Animation.c
@@ -81,8 +81,8 @@
          Debug.win32\SlotData.obj
          "Debug.win32\spine-cocos2dx.obj"
          libSpine.vcxproj -> E:\loogrpg\frameworks\runtime-src\proj.win32\Debug.win32\libSpine.lib
-     1>Done Building Project "E:\loogrpg\frameworks\cocos2d-x\cocos\editor-support\spine\proj.win32\libSpine.vcxproj" (Build target(s)).
+     1>Done Building Project "E:\loogrpg\frameworks\cocos2d-x\cocos\editor-support\spine\proj.win32\libSpine.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:24.72
+Time Elapsed 00:00:13.58

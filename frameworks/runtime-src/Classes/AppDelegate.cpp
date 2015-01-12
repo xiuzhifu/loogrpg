@@ -25,6 +25,7 @@
 #include "anysdkbindings.h"
 #include "anysdk_manual_bindings.h"
 #endif
+#include "lmap.h"
 
 using namespace CocosDenshion;
 
@@ -48,6 +49,7 @@ static void quick_module_register(lua_State *L)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         luaopen_cocos2dx_extra_ios_iap_luabinding(L);
 #endif
+		open_map(L);
     }
     lua_pop(L, 1);
 }
