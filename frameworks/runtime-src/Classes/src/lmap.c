@@ -1,7 +1,7 @@
 
 
 #include "map.h"
-struct map * MAP = NULL;
+struct map * MAP;
 #if __cplusplus
 extern "C"{
 #endif

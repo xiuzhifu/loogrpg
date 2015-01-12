@@ -4,7 +4,7 @@
 #pragma pack(2)
 /*单层地图实现，遮挡关系都做半透明处理*/
 struct map_header {
-	char header[32];
+	char flag[32];//LZJ
 	uint16_t width;
 	uint16_t height;
 	uint16_t picture_count;
@@ -40,12 +40,12 @@ struct map {
 	struct map_animation *animations;
 	int16_t *flags;
 };
-bool map_load(struct map *map, const char* filename);
+int map_load(struct map *map, const char* filename);
 
-bool map_canmove(struct map *map, const uint16_t x, const uint16_t y);
+int map_canmove(struct map *map, const uint16_t x, const uint16_t y);
 
-bool map_canfly(struct map *map, const uint16_t x, const uint16_t y);
+int map_canfly(struct map *map, const uint16_t x, const uint16_t y);
 
-bool map_blend(struct map *map, const uint16_t x, const uint16_t y);
+int map_blend(struct map *map, const uint16_t x, const uint16_t y);
 #endif
 
