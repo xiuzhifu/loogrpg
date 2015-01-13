@@ -1,10 +1,10 @@
 #ifndef MAP_H
 #define MAP_H
+//#pragma pack(2)
 #include<stdint.h>
-#pragma pack(2)
-/*µ¥²ãµØÍ¼ÊµÏÖ£¬ÕÚµ²¹ØÏµ¶¼×ö°ëÍ¸Ã÷´¦Àí*/
+/*å•å±‚åœ°å›¾å®ç°ï¼Œé®æŒ¡å…³ç³»éƒ½åšåŠé€æ˜å¤„ç†*/
 struct map_header {
-	char flag[32];//LZJ
+	char flag[4];//.ABC
 	uint16_t width;
 	uint16_t height;
 	uint16_t picture_count;
@@ -20,16 +20,24 @@ struct map_picture {
 struct map_animation {
 	uint16_t x;
 	uint16_t y;
-	uint16_t animation;//¶¯»­id
-	int8_t animation_offsetx;//¶¯»­»ùÓÚµ±Ç°¸ñ×Óx·½ÏòÆ«ÒÆÁ¿
-	int8_t animation_offsety;//¶¯»­»ùÓÚµ±Ç°¸ñ×Óy·½ÏòÆ«ÒÆÁ¿
+	uint16_t animation;//åŠ¨ç”»id
+	int8_t animation_offsetx;//åŠ¨ç”»åŸºäºå½“å‰æ ¼å­xæ–¹å‘åç§»é‡
+	int8_t animation_offsety;//åŠ¨ç”»åŸºäºå½“å‰æ ¼å­yæ–¹å‘åç§»é‡
 };
+
+#define FLAG_MOVE 0x0001
+#define FLAG_FLY 0x0002
+#define FLAG_BLEND 0x0004
+#define FLAG_PICTURE 0x0008
+#define FLAG_ANIMATION 0x0010
 
 struct map_cellflag {
 	/*
-	1 ²»¿ÉĞĞ×ß
-	2 ²»¿É·ÉĞĞ
-	2 ÕÚµ²µã
+	1 ä¸å¯è¡Œèµ°
+	2 ä¸å¯é£è¡Œ
+	3 é®æŒ¡ç‚¹
+	4 å›¾ç‰‡
+	5 æœ‰åŠ¨ç”»
 	*/
 	int16_t flag;
 };
@@ -40,12 +48,8 @@ struct map {
 	struct map_animation *animations;
 	int16_t *flags;
 };
-int map_load(struct map *map, const char* filename);
+int map_load(struct map *m, const char* filename);
+int map_flag(struct map *m, const uint16_t x, const uint16_t y, const uint16_t flag);
 
-int map_canmove(struct map *map, const uint16_t x, const uint16_t y);
-
-int map_canfly(struct map *map, const uint16_t x, const uint16_t y);
-
-int map_blend(struct map *map, const uint16_t x, const uint16_t y);
 #endif
 

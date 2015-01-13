@@ -1,28 +1,28 @@
-
-
+//#include "cocos2d.h"
+#include "platform/CCFileUtils.h"
 #include "map.h"
-struct map * MAP;
+static struct map * MAP = (struct  map *)malloc(sizeof(struct map));
 #if __cplusplus
 extern "C"{
 #endif
 #include <lua.h>
 #include <lauxlib.h>
-int 
-lmap_new(lua_State *L){
-	MAP = (struct  map *)malloc(sizeof(struct map));
-	return 0;
-}
 
-int
-lmap_free(lua_State *L){
-	free(MAP);
-	return 0;
-}
-
+USING_NS_CC;
 int 
 lmap_load(lua_State *L){
 	const char* filename = luaL_checkstring(L, 1);
-	lua_pushboolean(L, map_load(MAP, filename));
+	std::string fn = FileUtils::getInstance()->fullPathForFilename(filename);
+	if (fn == "") return 0;
+	if (map_load(MAP, fn.c_str()) < 0) return -1;
+	lua_newtable(L);
+	lua_pushliteral(L, "width");
+	lua_pushinteger(L, MAP->header.width);
+	lua_rawset(L, -3);
+
+	lua_pushliteral(L, "height");
+	lua_pushinteger(L, MAP->header.height);
+	lua_rawset(L, -3);
 	return 1;
 }
 
@@ -30,7 +30,7 @@ int
 lmap_canmove(lua_State *L){
 	const uint16_t x = lua_tointeger(L, 1);
 	const uint16_t y = lua_tointeger(L, 2);
-	lua_pushboolean(L, map_canmove(MAP, x, y));
+	lua_pushboolean(L, map_flag(MAP, x, y, FLAG_MOVE));
 	return 1;
 }
 
@@ -92,14 +92,13 @@ lmap_getanimation(lua_State *L){
 
 int open_map(lua_State *L){
 	luaL_Reg l[] = {
-		{ "new", lmap_new},
-		{ "free", lmap_free},
 		{ "load", lmap_load },	
 		{ "getpictures", lmap_getpicture },
 		{ "getanimations", lmap_getanimation },  
 		{ NULL, NULL },
 	};
 	luaL_openlib(L, "map2", l, 0);
+	//luaL_newlib(L, l);
 	return 1;
 }
 #if __cplusplus 
