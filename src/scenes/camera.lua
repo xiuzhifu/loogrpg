@@ -34,6 +34,7 @@ function camera.move(player)
 		camera.bottom = camera.y + camera.centery
 		if camera.bottom > camera.height then camera.bottom = camera.height end
 	end
+	return true
 end
 function camera.isactorincamera(actor)
 	local x = actor.x 
@@ -60,12 +61,13 @@ function camera.getposinscene(x, y)
 		camera.top + math.floor(y / const.mapcellheight)
 end
 
-function camera.getcamerarect()
+function camera.getcameraxy()
 	return camera.left * const.mapcellwidth , camera.top * const.mapcellheight
 end
 
-function camera.get( ... )
-	-- body
+function camera.getcamerarect()
+	return {left =camera.left * const.mapcellwidth , top = camera.top * const.mapcellheight,
+		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight}
 end
 
 return camera

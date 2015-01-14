@@ -9,6 +9,7 @@ local flat = 1
 local follow = 2
 
 local map = {
+root = {},
 x = 0, 
 y = 0,
 mode = flat
@@ -17,27 +18,79 @@ mode = flat
 local const = require "const"
 local utils = require "utils"
 local camera = require "camera"
+local mc = require "map.c"
+local quadtree = require "quadtree"
 local cc = cc
 local sharedTextureCache = cc.Director:getInstance():getTextureCache()
 local sharedDirector = cc.Director:getInstance()
 
 function map.loadmap(filename)
-	map.image = sharedTextureCache:addImage(filename)
-	if map.cc_sprite then
-		map.scene:removeChild(0)
+	map.name = filename
+	map.cellimage = {}
+	map.h = mc.load("/map/"..filename..".map")
+	if not map.h then return false end
+	print(map.h.width, map.h.height)
+	map.h.width = 4096 * 4
+	map.h.height = 4096 * 4
+	camera.init(map.h.width, map.h.height)
+
+	local rect = {left = 0, top = 0, right = map.h.width, bottom = map.h.height}
+	map.root.rect = rect
+	local l, s, b = 0,  math.floor(math.max(rect.right, rect.bottom) / const.mapcellsize), 1
+	while true do
+		b = b * 2
+		l = l + 1
+		if b > s then break end
 	end
-	map.cc_sprite = display.newSprite(map.image)
-	display.align(map.cc_sprite, display.LEFT_TOP)
-	map.scene:addChild(map.cc_sprite)
+	quadtree.split(map.root, rect, l)
+	map.pictures = mc.getpictures()
+	for i,v in ipairs(map.pictures) do
+		local cell = {id = i}
+		cell.rect = {left = v.x, top = v.y , right = v.x + 1, bottom = v.y + 1}
+		quadtree.insert(map.root, cell)
+	end
+	map.animations = mc.getanimations()
 end
 
 function map.new(scene)
 	map.scene = scene
-	camera.init(1000, 1000)
+
 end
 
 function map.move()
-	camera.move(map.actor)
+	if camera.move(map.actor) then
+		local len = 0;
+		--所有地图图片都不显示
+		for k,v in pairs(map.cellimage) do
+			v.cc_sprite:setVisible(false)
+			len = len + 1
+			if len > 10 then
+				map.scene:removeChild(v.cc_sprite)
+				v.cc_sprite = nil
+				map.cellimage[k] = nil
+			end
+		end
+		--设置要显示的图片
+		local r = camera.getcamerarect()
+		local node = quadtree.get(map.root, r)
+		for i,v in ipairs(node) do
+			print(v.id)
+			local pic = map.pictures[v.id]
+			local image = map.name..pic.picture..'.png'
+			if not map.cellimage[image] then
+				map.cellimage[image] = {}
+				local t = map.cellimage[image] 
+				t.image = sharedTextureCache:addImage("/map/"..image)
+				t.cc_sprite = display.newSprite(t.image)
+				display.align(t.cc_sprite, display.LEFT_TOP)		
+				map.scene:addChild(t.cc_sprite)
+				t.x = pic.x
+				t.y = pic.y
+			else
+				map.cellimage[image].cc_sprite:setVisible(true)
+			end
+		end
+	end
 end
 
 function map.focusactor(actor)
@@ -47,7 +100,6 @@ function map.focusactor(actor)
 	map.walkspeedy = const.mapcellheight / (action.walk.time * action.walk.count)
 	map.runspeedx = const.mapcellwidth * 2 / (action.run.time * action.run.count)
 	map.runspeedy = const.mapcellheight * 2 / (action.run.time * action.run.count)
-	print("speed", map.runspeedx, map.runspeedy, map.walkspeedx, map.walkspeedy)
 end
 
 function map.setactorposition()
@@ -56,7 +108,6 @@ function map.setactorposition()
 		map.actor:setposition(x, y)
 		map.x = x
 		map.y = y
-		print(map.x, map.y)
 	end
 end
 
@@ -65,14 +116,17 @@ function map.getmapposition(x, y)
 end
 
 function map.update()
-	local x, y = camera.getcamerarect()
+	local x, y = camera.getcameraxy()
 	local tempx, tempy = - (x + map.actor.offsetx), - (y + map.actor.offsety)
 	if map.lastx == tempx and map.lasty == tempy then
 		return
 	end 
 	map.lastx = tempx 
 	map.lasty = tempy
-	map.cc_sprite:setPosition( tempx, utils.righty(tempy))
+	for k,v in pairs(map.cellimage) do
+		v.cc_sprite:setPosition(v.x + tempx, utils.righty(v.y + tempy))
+	end
+	--
 end
 
 return map

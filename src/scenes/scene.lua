@@ -16,12 +16,6 @@ local map = require "map"
 local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 
 function scene.new()
-	local map2 =  require "map2"
-
-	for k,v in pairs(map2) do
-		print("2",k,v)
-	end
-
 	local socket = require("socket")
 	print(socket._VERSION)
 	scene.scene = display.newScene("myscene")
@@ -32,7 +26,7 @@ function scene.new()
 	scene.scene:addChild(scene.actorlayer)
 	scene.scene:addChild(scene.magiclayer)
 
-	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 100)
+	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 1)
 
 	map.new(scene.maplayer)
 	scene.msg_loadmap()
@@ -89,7 +83,7 @@ function scene.ontouch(event)
 end
 
 function scene.msg_loadmap()
-	map.loadmap("map.png")
+	map.loadmap("test")
 end
 
 function scene.msg_createplayer( ... )
@@ -97,7 +91,6 @@ function scene.msg_createplayer( ... )
 	actor.x = camera.centerx
 	actor.y = camera.centery
 	actor.dir = 4
-	print(998,actor.x, actor.y)
 	scene.player = actor
 	map.focusactor(actor)
 	map.move()

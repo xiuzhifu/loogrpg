@@ -21,11 +21,11 @@ function player:move(tick)
 			self.currentaction = 0
 			self.movestep = 0
 			self.lastframetime = 0
-			return false
+			return true
 		end	
 		self:draw()
 	end
 	if self.movestep > 0 then self:recalcoffset(tick) end
-	return true
+	return false
 end
 return player

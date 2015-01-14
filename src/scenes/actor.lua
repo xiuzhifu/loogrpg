@@ -77,7 +77,7 @@ function actor:move(tick)
 			self.currentaction = 0
 			self.movestep = 0
 			self.lastframetime = 0
-			return false
+			return true
 		end	
 		self:draw()
 	end
@@ -90,7 +90,7 @@ function actor:move(tick)
 		self.drawy = ty
 		self:setposition(tx, ty)
 	end 
-	return true
+	return false
 end
 function actor:recalcframe()
 	local act
@@ -155,7 +155,7 @@ function actor:update(tick)
 			self:handleaction() 
 		end
 	end
-	if not self:move(tick) then
+	if self:move(tick) then
 		self:recalcframe()
 	end
 	for i,v in ipairs(self.effectlist) do
