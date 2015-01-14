@@ -3,8 +3,8 @@
        "isLandscape": true,
        "isWindowTop": false,
        "name": "longget1",
-       "width": 800,
-       "height": 1200,
+       "width": 1024,
+       "height": 800,
        "entry": "src/main.lua",
        "consolePort": 6010,
        "uploadPort": 6020

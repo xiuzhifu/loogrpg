@@ -36,6 +36,7 @@ lmap_canmove(lua_State *L){
 
 int 
 lmap_getpicture(lua_State *L){
+	if (MAP->header.picture_count == 0) return 0;
 	lua_newtable(L);
 	for (int i = 0; i < MAP->header.picture_count; i++){
 		struct map_picture *picture = MAP->pictures + i;
@@ -43,47 +44,48 @@ lmap_getpicture(lua_State *L){
 
 		lua_pushliteral(L, "x");
 		lua_pushinteger(L, picture->x);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "y");
 		lua_pushinteger(L, picture->y);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "picture");
 		lua_pushinteger(L, picture->pictureid);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
-		lua_rawseti(L, -2, 1);
+		lua_rawseti(L, -2, i + 1);
 	}
 	return 1;
 }
 
 int 
 lmap_getanimation(lua_State *L){
+	if (MAP->header.animation_count == 0) return 0;
 	lua_newtable(L);
-	for (int i = 0; i < MAP->header.picture_count; i++){
+	for (int i = 0; i < MAP->header.animation_count; i++){
 		struct map_animation *animation = MAP->animations + i;
 		lua_newtable(L);
 
 		lua_pushliteral(L, "x");
 		lua_pushinteger(L, animation->x);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "y");
 		lua_pushinteger(L, animation->y);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "offsetx");
 		lua_pushinteger(L, animation->animation_offsetx);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "offsety");
 		lua_pushinteger(L, animation->animation_offsety);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_pushliteral(L, "animation");
 		lua_pushinteger(L, animation->animation);
-		lua_rawset(L, -4);
+		lua_rawset(L, -3);
 
 		lua_rawseti(L, -2, 1);
 	}
@@ -97,7 +99,7 @@ int open_map(lua_State *L){
 		{ "getanimations", lmap_getanimation },  
 		{ NULL, NULL },
 	};
-	luaL_openlib(L, "map2", l, 0);
+	luaL_openlib(L, "map.c", l, 0);
 	//luaL_newlib(L, l);
 	return 1;
 }
