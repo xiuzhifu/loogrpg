@@ -66,8 +66,8 @@ function camera.getcameraxy()
 end
 
 function camera.getcamerarect()
-	return {left =camera.left * const.mapcellwidth , top = camera.top * const.mapcellheight,
-		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight}
+	return {left =camera.left * const.mapcellwidth, top = camera.top * const.mapcellheight,
+		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight + 100}
 end
 
 return camera

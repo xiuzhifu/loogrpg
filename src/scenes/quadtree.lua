@@ -48,35 +48,38 @@ function quadtree.rectinrect(inrect, outrect)
 	end
 end
 
-function quadtree.find_node(node, rect)
+function quadtree.find_node(node, rect, parent)
 	if (node.level > 1) and quadtree.rectinrect(rect, node.rect) then
 		if rect.left >= node.rect.left + (node.rect.right - node.rect.left) / 2 then
 			if rect.top >= node.rect.top + (node.rect.bottom - node.rect.top) / 2 then
-				return quadtree.find_node(node.quadnode[rt], rect)
+				return quadtree.find_node(node.quadnode[rt], rect, node)
 			else
-				return quadtree.find_node(node.quadnode[rb], rect)
+				return quadtree.find_node(node.quadnode[rb], rect, node)
 			end
 		else
 			if rect.top >= node.rect.top + (node.rect.bottom - node.rect.top) / 2 then
-				return quadtree.find_node(node.quadnode[lb], rect)
+				return quadtree.find_node(node.quadnode[lb], rect, node)
 			else
-				return quadtree.find_node(node.quadnode[lt], rect)
+				return quadtree.find_node(node.quadnode[lt], rect, node)
 			end
 		end
-		return true
+	end
+	-- 
+	if quadtree.rectinrect(rect, node.rect) then
+		return node
 	else
-		return false
+		return parent
 	end
 end
 
 function quadtree.insert(node, data)
-	local n = quadtree.find_node(node, data.rect)
+	local n = quadtree.find_node(node, data.rect, node)
 	if not n.list then n.list = {} end
 	n.list[#n.list + 1] = data
 end
 
 function quadtree.delete(node, data)
-	local n = quadtree.find_node(node, data.rect)
+	local n = quadtree.find_node(node, data.rect, node)
 	for i, v in ipairs(n.list) do
 		if v == list then
 			table.remove(n.list, i)
@@ -101,7 +104,9 @@ end
 
 function quadtree.get(node, rect)
 	local r = {}
-	local n = quadtree.find_node(node, rect)
+	local n = quadtree.find_node(node, rect, node)
+	print(rect.left, rect.top, rect.right, rect.bottom)
+	print(n.rect.left, n.rect.top, n.rect.right, n.rect.bottom, #n)
 	if n then wget(n, r) end
 	return r
 end
@@ -129,7 +134,7 @@ quadtree.split(root, rect, 5)
 --quadtree.insert(root, cell)
 --local r = {left = 0, top = 0, right = 1024, bottom = 1024}
 local r = {left = 128, top = 84, right = 1152, bottom = 840}
-local n = quadtree.find_node(root, r)
+local n = quadtree.find_node(root, r, root)
 print("3232",n.rect.left, n.rect.top, n.rect.right, n.rect.bottom)
 --print("node", node.rect.left, node.rect.top, node.rect.right, node.rect.bottom)
 --]]
