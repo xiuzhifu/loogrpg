@@ -12,8 +12,8 @@ struct map_header {
 };
 
 struct map_picture {
-	uint16_t x;
-	uint16_t y;
+	uint32_t x;//x坐标(像素)
+	uint32_t y;//y坐标(像素)
 	uint16_t pictureid;
 };
 
