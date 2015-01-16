@@ -76,7 +76,7 @@ function map.move()
 		for i,v in ipairs(node) do
 			print(v.id)
 			local pic = map.pictures[v.id]
-			local image = map.name..pic.picture..'.png'
+			local image = map.name..'_'..pic.picture..'.png'
 			if not map.cellimage[image] then
 				map.cellimage[image] = {}
 				local t = map.cellimage[image] 
