@@ -1,4 +1,5 @@
 local const = require "const"
+local utils = require "utils"
 camera =
 {
 	left = 0,
@@ -26,13 +27,13 @@ function camera.move(player)
 	camera.player = player
 	if camera.x and camera.x then
 		camera.left = camera.x - camera.centerx
-		if camera.left < 0 then camera.left = 0 end
+		--if camera.left < 0 then camera.left = 0 end
 		camera.right = camera.x + camera.centerx
-		if camera.right > camera.width then camera.right = camera.width end
+		--if camera.right > camera.width then camera.right = camera.width end
 		camera.top = camera.y - camera.centery
-		if camera.top < 0 then camera.top = 0 end
+		--if camera.top < 0 then camera.top = 0 end
 		camera.bottom = camera.y + camera.centery
-		if camera.bottom > camera.height then camera.bottom = camera.height end
+		--if camera.bottom > camera.height then camera.bottom = camera.height end
 	end
 	return true
 end
@@ -67,7 +68,11 @@ end
 
 function camera.getcamerarect()
 	return {left =camera.left * const.mapcellwidth, top = camera.top * const.mapcellheight,
-		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight + 100}
+		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight}
+end
+
+function function_name( ... )
+	-- body
 end
 
 return camera

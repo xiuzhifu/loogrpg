@@ -1,0 +1,5 @@
+local playerconfig = {
+	
+}
+
+return playerconfig

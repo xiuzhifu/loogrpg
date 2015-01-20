@@ -1,8 +1,8 @@
 return {
 mapcellwidth = 64,
 mapcellheight = 42,
-screenwidth = 1024,
-screenheight = 800,		
+screenwidth = 960,
+screenheight = 640,		
 mapcellsize = 1024,
 gtick = -1,
 

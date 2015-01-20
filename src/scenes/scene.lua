@@ -6,13 +6,16 @@ local magic = require "magic"
 local magicconfig = require "magicconfig"
 local effectconfig = require "effectconfig"
 local camera = require "camera"
+local netmgr = require "netmgr"
 local scene = {
 	tick = 0,
+	uilist = {},
 	__gc = function()
 		scheduler.unscheduleGlobal(scene.timer)
 	end
 }
 local map = require "map"
+local uiplayerinfo = require "ui/uiplayerinfo"
 local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 
 function scene.new()
@@ -22,18 +25,26 @@ function scene.new()
 	scene.maplayer = display.newNode()
 	scene.actorlayer = display.newNode()
 	scene.magiclayer = display.newNode()
+	scene.uilayer = display.newNode()
+	
 	scene.scene:addChild(scene.maplayer)
 	scene.scene:addChild(scene.actorlayer)
 	scene.scene:addChild(scene.magiclayer)
+	scene.scene:addChild(scene.uilayer)
+	
 
-	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 1)
+	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03)
 
 	map.new(scene.maplayer)
 	scene.msg_loadmap()
 	scene.msg_createplayer()
+	uiplayerinfo.new(scene.uilayer)
+	table.insert(scene.uilist, uiplayerinfo)
 
 	scene.scene:setTouchEnabled(true)
 	scene.scene:addNodeEventListener(cc.NODE_TOUCH_EVENT, scene.ontouch)
+
+
 	return scene.scene
 end
 
@@ -55,6 +66,12 @@ function scene.update(dt)
 		if not v:update(scene.tick, scene.player) then
 			scene.magiclayer:removeChild(v.cc_sprite)
 			table.remove(magic.effectlist, i)
+		end
+	end
+
+	for i,v in ipairs(scene.uilist) do
+		if v.update then
+			v.update(scene.tick)
 		end
 	end
 end
@@ -83,11 +100,12 @@ function scene.ontouch(event)
 end
 
 function scene.msg_loadmap()
-	map.loadmap("test")
+	map.loadmap("1016")
 end
 
 function scene.msg_createplayer( ... )
 	local actor = actormgr.newplayer(scene, 100, 1, "布衣")
+	print("center:",camera.centerx, camera.centery)
 	actor.x = camera.centerx
 	actor.y = camera.centery
 	actor.dir = 4
@@ -108,6 +126,7 @@ function scene.msg_createplayer( ... )
 	scene.msg_flyeffect()
 	--local effect = magic.create_actoreffect(effectconfig[2], actor)
 	--actor:addeffect(effect)
+	uiplayerinfo.setplayer(actor)
 end
 
 function scene.msg_walk( ... )
@@ -136,6 +155,15 @@ function scene.msg_flyeffect( ... )
 		, 20, 15, effectconfig[1], scene.tmpactor)
 	
 end
+
+function scene.msg_actorattri( ... )
+	
+end
+
+netmgr.addmessagehandler(const.sm_walk, scene.msg_walk)
+netmgr.addmessagehandler(const.sm_run, scene.msg_run)
+netmgr.addmessagehandler(const.sm_magic, scene.msg_magic)
+netmgr.addmessagehandler(const.sm_actorattri, scene.msg_actorattri)
 
 return scene
 

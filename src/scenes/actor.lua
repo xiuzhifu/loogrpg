@@ -30,6 +30,7 @@ function actor.new(config)
 	t.alive = false
 	t.effectlist = {}
 	t.actionlist = {}
+	t.attri = {}
 
 	t.action = config
 
@@ -41,7 +42,7 @@ function actor:setdress(dress)
 	self.dress = dress
 	local image = imagemgr:getimage(self.dress.images, self.dress.start)
 	self.cc_dress = display.newSprite(image)
-	self.cc_sprite:addChild(self.cc_dress) 
+	self.cc_sprite:addChild(self.cc_dress)
 	if self.dress.effectstart then
 		self.cc_dresseffect = display.newSprite(image)
 		self.cc_sprite:addChild(t.cc_dresseffect)

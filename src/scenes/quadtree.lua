@@ -49,12 +49,13 @@ function quadtree.rectinrect(inrect, outrect)
 end
 
 function quadtree.find_node(node, rect, parent)
+	--printrect(node.rect)
 	if (node.level > 1) and quadtree.rectinrect(rect, node.rect) then
 		if rect.left >= node.rect.left + (node.rect.right - node.rect.left) / 2 then
 			if rect.top >= node.rect.top + (node.rect.bottom - node.rect.top) / 2 then
-				return quadtree.find_node(node.quadnode[rt], rect, node)
-			else
 				return quadtree.find_node(node.quadnode[rb], rect, node)
+			else
+				return quadtree.find_node(node.quadnode[rt], rect, node)
 			end
 		else
 			if rect.top >= node.rect.top + (node.rect.bottom - node.rect.top) / 2 then
@@ -69,6 +70,14 @@ function quadtree.find_node(node, rect, parent)
 		return node
 	else
 		return parent
+	end
+end
+
+function printrect(rect, s)
+	if s then
+		print(s, rect.left, rect.top, rect.right, rect.bottom)
+	else
+		print(rect.left, rect.top, rect.right, rect.bottom)
 	end
 end
 
@@ -105,8 +114,8 @@ end
 function quadtree.get(node, rect)
 	local r = {}
 	local n = quadtree.find_node(node, rect, node)
-	print(rect.left, rect.top, rect.right, rect.bottom)
-	print(n.rect.left, n.rect.top, n.rect.right, n.rect.bottom, #n)
+	printrect(rect)
+	printrect(n.rect)
 	if n then wget(n, r) end
 	return r
 end
@@ -129,13 +138,9 @@ local rect = {left = 0, top = 0, right = 4096 * 4 , bottom = 4096 * 4}
 local root, cell = {}, {}
 root.rect = rect
 quadtree.split(root, rect, 5)
---quadtree.print_tree(root)
---cell.rect = {left = 0, top = 0 , right = 1, bottom = 1}
 --quadtree.insert(root, cell)
 --local r = {left = 0, top = 0, right = 1024, bottom = 1024}
-local r = {left = 128, top = 84, right = 1152, bottom = 840}
+local r = {left = 1024, top = 0, right = 1025, bottom = 1}
 local n = quadtree.find_node(root, r, root)
-print("3232",n.rect.left, n.rect.top, n.rect.right, n.rect.bottom)
---print("node", node.rect.left, node.rect.top, node.rect.right, node.rect.bottom)
---]]
+printrect(n.rect)
 return quadtree
