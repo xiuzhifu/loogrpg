@@ -54,7 +54,6 @@ end
 
 function map.new(scene)
 	map.scene = scene
-
 end
 
 function map.move()

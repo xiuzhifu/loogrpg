@@ -6,5 +6,6 @@ function __G__TRACKBACK__(errorMessage)
     print("----------------------------------------")
 end
 package.path = package.path..";./src/?.lua;./src/cocos/?.lua;./src/framework/?.lua;./src/scenes/?.lua;./src/server/?.lua"
-require("config")	
+require("config")
+require("pack")
 display.replaceScene(require("scenes.scene").new())

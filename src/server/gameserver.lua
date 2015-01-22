@@ -1,13 +1,41 @@
 local gs = {
-	__gc = function()
-		scheduler.unscheduleGlobal(scene.timer)
-	end
+	tick = 0,
+	playerlist = {}
 }
+local struct = require "struct"
+local msghandler = require "msghandler"
+local player = require "player"
 function gs.new()
-	gs.tick = 0
-	gs.timer = scheduler.scheduleGlobal(gs.update, 0.03)
+	local t = setmetatable({}, gs)
+	for k,v in pairs(gs) do
+		t[k] = v
+	end
+	return t
 end
 
-function gs.update(dt)
-	gs.tick = gs.tick + math.floor(dt * 1000)
+function gs:newplayer(sock, client)
+	local p = player.new()
+	p.sock = sock
+	p.client = client
+	p.runing = true
+	self.playerlist[client] = p
+	return p
 end
+
+function gs:deleteplayer(client)
+	self.playerlist[client] = nil
+end
+
+function gs:update(tick)
+	--print(tick)
+	self.tick = tick
+	for k,v in pairs(self.playerlist) do
+		v:update(tick)
+	end
+end
+
+function gs:test()
+	-- body
+end
+
+return gs

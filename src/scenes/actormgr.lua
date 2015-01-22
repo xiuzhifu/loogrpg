@@ -18,7 +18,7 @@ function actormgr.newactor(scene, id, type, dress, weapon)
 		t:setweapon(actorconfig.weapones[weapon])
 	end
 
-	scene.actorlayer:addChild(t.cc_sprite)--加入到显示列表
+	scene:addChild(t.cc_sprite)--加入到显示列表
 
 	table.insert(actormgr.actorlist, t)
 	return t
@@ -38,7 +38,7 @@ function actormgr.newplayer(scene, id, type, dress, weapon)
 		t:setweapon(actorconfig.weapones[weapon])
 	end
 
-	scene.actorlayer:addChild(t.cc_sprite)--加入到显示列表
+	scene:addChild(t.cc_sprite)--加入到显示列表
 	return t
 end
 

@@ -40,8 +40,8 @@ function playerinfo.new(scene)
 end
 
 function playerinfo.update(tick)
-	local atti = playerinfo.player.atti
-	local hp, hpmax = atti.hp, atti.hpmax
+	local attri = playerinfo.player.attri
+	local hp, hpmax = attri.hp, attri.hpmax
 	hp , hpmax = 60, 100
 	if hp ~= pi.hp then
 		pi.hp = hp

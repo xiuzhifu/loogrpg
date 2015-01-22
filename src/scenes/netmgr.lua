@@ -1,9 +1,13 @@
+local socket = require "socket"
 local netmgr = {
 	handler = {},
 	msglist ={}
 }
+function netmgr.new()
+	print(socket._VERSION)
+end
 function netmgr.addmessagehandler(id, func)
-	netmgr.handler[id] = func
+	netmgr.handler[tostring(id)] = func
 end
 
 function netmgr.deletemessagehandler(id)
@@ -23,5 +27,16 @@ end
 function netmgr.addmsg(msg)
 	table.insert(netmgr.msglist, msg)
 end
+
+function netmgr.send(msg)
+	netmgr.socket:send(msg)
+end
+
+function netmgr.connect(ip, port)
+	netmgr.socket = socket.connect(ip, port)
+end
+
+netmgr.new()
+netmgr.connect("localhost", 8858)
 
 return netmgr

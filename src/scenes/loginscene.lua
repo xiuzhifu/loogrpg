@@ -30,7 +30,9 @@ function ls.onloginclick(sender, event)
 	if event == 2 then
 		print(ls.username:getString(),
 		ls.password:getString())
-		local s = string.pack("<hp2",const.cm_login, ls.username:getString(), ls.password:getString())
+		local s = string.pack(">hz2",const.cm_login, ls.username:getString(),ls.password:getString())
+		print(s, #s)
+		s = string.pack(">hA", #s, s)
 		netmgr.send(s)
 	end
 end
