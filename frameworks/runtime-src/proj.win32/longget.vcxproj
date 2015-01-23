@@ -435,7 +435,7 @@ copy "$(ProjectDir)..\..\..\config.json" "$(LocalDebuggerWorkingDirectory)\confi
     <ClCompile Include="..\Classes\runtime\Protos.pb.cc" />
     <ClCompile Include="..\Classes\runtime\Runtime.cpp" />
     <ClCompile Include="..\Classes\runtime\Shine_png.cpp" />
-    <ClCompile Include="..\Classes\src\lmap.c" />
+    <ClCompile Include="..\Classes\src\lmap.cpp" />
     <ClCompile Include="..\Classes\src\map.c" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="main.cpp" />
