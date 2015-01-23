@@ -1,7 +1,6 @@
 //#include "cocos2d.h"
 #include "platform/CCFileUtils.h"
 #include "map.h"
-static struct map * MAP = (struct  map *)malloc(sizeof(struct map));
 #if __cplusplus
 extern "C"{
 #endif
@@ -9,6 +8,7 @@ extern "C"{
 #include <lauxlib.h>
 
 USING_NS_CC;
+static struct map * MAP = (struct  map *)malloc(sizeof(struct map));
 int 
 lmap_load(lua_State *L){
 	const char* filename = luaL_checkstring(L, 1);
