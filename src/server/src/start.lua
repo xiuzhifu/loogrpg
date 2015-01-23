@@ -1,6 +1,3 @@
-
-
-
 local socket = require "levent.socket.c"
 local levent = require "levent.levent"
 local timeout = require "levent.timeout"
@@ -31,6 +28,7 @@ function handle_client(gs, csock, clientid)
 	    levent.sleep(0.01)
     end
     csock:close()
+    gs:deleteplayer(player)
     print("Connection close:", host, port)
 end
 

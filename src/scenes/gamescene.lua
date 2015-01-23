@@ -17,24 +17,25 @@ local gamescene = {
 local map = require "map"
 local uiplayerinfo = require "ui/uiplayerinfo"
 
-function gamescene.new(scene)
+function gamescene.new(scene, scenenode)
 	gamescene.scene = scene
+	gamescene.scenenode = scenenode
 	gamescene.maplayer = display.newNode()
 	gamescene.actorlayer = display.newNode()
 	gamescene.magiclayer = display.newNode()
 	gamescene.uilayer = display.newNode()
-	gamescene.scene:addChild(gamescene.maplayer)
-	gamescene.scene:addChild(gamescene.actorlayer)
-	gamescene.scene:addChild(gamescene.magiclayer)
-	gamescene.scene:addChild(gamescene.uilayer)
+	gamescene.scenenode:addChild(gamescene.maplayer)
+	gamescene.scenenode:addChild(gamescene.actorlayer)
+	gamescene.scenenode:addChild(gamescene.magiclayer)
+	gamescene.scenenode:addChild(gamescene.uilayer)
 	map.new(gamescene.maplayer)
 	gamescene.msg_loadmap()
 	gamescene.msg_createplayer()
 	uiplayerinfo.new(gamescene.uilayer)
 	table.insert(gamescene.uilist, uiplayerinfo)
 
-	gamescene.scene:setTouchEnabled(true)
-	gamescene.scene:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
+	gamescene.scenenode:setTouchEnabled(true)
+	gamescene.scenenode:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
 	return gamescene
 end
 
@@ -67,7 +68,8 @@ function gamescene.update(dt)
 end
 
 function gamescene.ontouch(event)
-        printf("node in scene [%s] NODE_EVENT: %s", gamescene.scene.name, event.name)
+		print(gamescene.scenenode)
+        printf("node in scene [%s] NODE_EVENT: %s", gamescene.scene.scene.name, event.name)
         local x , y = map.getmapposition(event.x, event.y)
         local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
         gamescene.player_move(dir)

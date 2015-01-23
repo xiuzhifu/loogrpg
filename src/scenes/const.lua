@@ -22,5 +22,6 @@ cm_magic        = 1006,
 sm_magic        = 1006,
 sm_createactor  = 1007,
 cm_login        = 1008,
-sm_login        = 1008
+sm_login        = 1008,
+sm_actorattri   = 1009,
 }

@@ -14,6 +14,7 @@ local scene = {
 local gamescene = require "gamescene"
 local loginscene = require "loginscene"
 local createplayerscene = require "createplayerscene"
+local netmgr = require "netmgr"
 
 local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 
@@ -25,11 +26,11 @@ function scene.new()
 	scene.loginlayer = display.newNode()
 	scene.createplayerlayer = display.newNode()
 	scene.gamelayer = display.newNode()
-	scene[1] = loginscene.new(scene.loginlayer)
-	scene[2] = createplayerscene.new(scene.createplayerlayer)
-	scene[3] = gamescene.new(scene.gamelayer)
+	scene[1] = loginscene.new(scene, scene.loginlayer)
+	scene[2] = createplayerscene.new(scene, scene.createplayerlayer)
+	scene[3] = gamescene.new(scene, scene.gamelayer)
 	scene.changescene(1)
-	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 1)
+	scene.timer = scheduler.scheduleGlobal(scene.update, 0.03 * 100)
 	scene.test()
 	return scene.scene
 end
@@ -39,23 +40,20 @@ function scene.gettickcount()
 end
 
 function scene.test( ... )
-	
-	-- use lpack to write a pack
-	local __pack = string.pack("<A","中")
-	local next, val = string.unpack(__pack, "A",1)
-	print(val, next)
+
 end
 
 function scene.update(dt)
 	scene.tick = scene.tick + math.floor(dt * 1000)
-	scene.currentscene.update(dt)
+	scene.currentscene.update(scene.tick)
+	netmgr.update(scene.tick)
 end
 
 function scene.changescene(id)
 	if id and id > 0 and id < 4 then
-		if scene.currentscene then scene.scene:removeChild(scene.currentscene.scene) end
-		scene.currentscene = scene[id]	
-		scene.scene:addChild(scene.currentscene.scene)
+		if scene.currentscene then scene.scene:removeChild(scene.currentscene.scenenode, false) end
+		scene.currentscene = scene[id]
+		scene.scene:addChild(scene.currentscene.scenenode)
 	end
 end
 
@@ -64,5 +62,3 @@ function scene.ontouch(event)
 end
 
 return scene
-
-
