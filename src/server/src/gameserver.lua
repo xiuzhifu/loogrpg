@@ -3,7 +3,6 @@ local gs = {
 	playerlist = {}
 }
 local struct = require "struct"
-local msghandler = require "msghandler"
 local player = require "player"
 function gs.new()
 	local t = setmetatable({}, gs)

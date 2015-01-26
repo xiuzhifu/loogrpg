@@ -1,6 +1,9 @@
+local msghandler = require "msghandler"
+local struct = require "struct"
 local player =  {
 	msglist = {}
 }
+player.__index = player
 --[[
 	t.hp = config.hp
 	t.mp = config.mp
@@ -42,8 +45,9 @@ end
 function player:dispatchmsg(msg)
 	local id = struct.unpack(">I2", msg)
 	if msghandler[id] then
-		msghandler[id](msg)
+		msghandler[id](self, msg)
 	else
 		gs.runing = false
 	end
 end
+return player
