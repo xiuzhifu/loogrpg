@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CBAEB41E-CD92-4FDD-AD6F-B2CF9044B758</string>
+	<key>IDESourceControlProjectName</key>
+	<string>longget</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7B90E623C187C853F84C35A8E6F3DC8CE6A6C7CB</key>
+		<string>https://git.oschina.net/anmeng1/loogrpg.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>frameworks/runtime-src/proj.ios_mac/longget.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7B90E623C187C853F84C35A8E6F3DC8CE6A6C7CB</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/anmeng1/loogrpg.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7B90E623C187C853F84C35A8E6F3DC8CE6A6C7CB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7B90E623C187C853F84C35A8E6F3DC8CE6A6C7CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>loogrpg</string>
+		</dict>
+	</array>
+</dict>
+</plist>
