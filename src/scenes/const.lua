@@ -1,8 +1,8 @@
 return {
 mapcellwidth = 64,
 mapcellheight = 42,
-screenwidth = 1024,
-screenheight = 800,		
+screenwidth = 960,
+screenheight = 640,		
 mapcellsize = 1024,
 gtick = -1,
 
@@ -20,5 +20,8 @@ cm_nowdeath 	= 1005,
 sm_nowdeath 	= 1005,
 cm_magic        = 1006,
 sm_magic        = 1006,
-sm_createactor  = 1007
+sm_createactor  = 1007,
+cm_login        = 1008,
+sm_login        = 1008,
+sm_actorattri   = 1009,
 }

@@ -9,7 +9,9 @@ LOCAL_MODULE_FILENAME := libcocos2dlua
 LOCAL_SRC_FILES := hellolua/main.cpp \
 ../../Classes/VisibleRect.cpp \
 ../../Classes/AppDelegate.cpp \
-../../Classes/ConfigParser.cpp
+../../Classes/ConfigParser.cpp \
+../../Classes/src/map.cpp \
+../../Classes/src/lmap.cpp
 
 ifeq ($(NDK_DEBUG),1)
 LOCAL_SRC_FILES += \
@@ -33,6 +35,7 @@ LOCAL_SRC_FILES += \
 ../../Classes/anysdk_manual_bindings.cpp
 
 LOCAL_C_INCLUDES := \
+$(LOCAL_PATH)/../../Classes/src \
 $(LOCAL_PATH)/../../Classes/runtime \
 $(LOCAL_PATH)/../../Classes \
 $(COCOS2DX_ROOT)/external \

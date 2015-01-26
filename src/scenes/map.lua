@@ -29,7 +29,6 @@ function map.loadmap(filename)
 	map.cellimage = {}
 	map.h = mc.load("/map/"..filename..".map")
 	if not map.h then return false end
-	print(map.h.width, map.h.height)
 	map.h.width = 4096 * 4
 	map.h.height = 4096 * 4
 	camera.init(map.h.width, map.h.height)
@@ -42,6 +41,7 @@ function map.loadmap(filename)
 		l = l + 1
 		if b > s then break end
 	end
+	print("l", l)
 	quadtree.split(map.root, rect, l)
 	map.pictures = mc.getpictures()
 	for i,v in ipairs(map.pictures) do
@@ -54,21 +54,14 @@ end
 
 function map.new(scene)
 	map.scene = scene
-
 end
 
 function map.move()
 	if camera.move(map.actor) then
-		local len = 0;
 		--所有地图图片都不显示
 		for k,v in pairs(map.cellimage) do
+			v.visible = false
 			v.cc_sprite:setVisible(false)
-			len = len + 1
-			if len > 10 then
-				map.scene:removeChild(v.cc_sprite)
-				v.cc_sprite = nil
-				map.cellimage[k] = nil
-			end
 		end
 		--设置要显示的图片
 		local r = camera.getcamerarect()
@@ -88,8 +81,19 @@ function map.move()
 				t.y = pic.y
 			else
 				map.cellimage[image].cc_sprite:setVisible(true)
+				map.cellimage[image].visible = true
 			end
 		end
+		if #map.cellimage > 10 then
+			for i,v in ipairs(map.cellimage) do
+				if v.visible then
+					map.scene:removeChild(v.cc_sprite)
+					v.cc_sprite = nil
+					map.cellimage[k] = nil
+				end
+			end
+		end
+			
 	end
 end
 
@@ -126,7 +130,6 @@ function map.update()
 	for k,v in pairs(map.cellimage) do
 		v.cc_sprite:setPosition(v.x + tempx, utils.righty(v.y + tempy))
 	end
-	--
 end
 
 return map
