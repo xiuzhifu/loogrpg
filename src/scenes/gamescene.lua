@@ -7,19 +7,27 @@ local magicconfig = require "magicconfig"
 local effectconfig = require "effectconfig"
 local camera = require "camera"
 local netmgr = require "netmgr"
+local map = require "map"
+local monster = require "monster"
+local monsterconfig = require "monsterconfig"
+
+local scheduler = require (cc.PACKAGE_NAME..".scheduler")
 --[[
 	currentscene 1.登陆 2.创建 3.游戏
 ]]
 local gamescene = {
 	tick = 0,
-	uilist = {}
+	uilist = {},
+	__gc = function()
+		scheduler.unscheduleGlobal(gamescene.timer)
+	end
 }
 local map = require "map"
 local uiplayerinfo = require "ui/uiplayerinfo"
 
-function gamescene.new(scene, scenenode)
+function gamescene.new(scene)
 	gamescene.scene = scene
-	gamescene.scenenode = scenenode
+	gamescene.scenenode = display.newScene("gamescene")
 	gamescene.maplayer = display.newNode()
 	gamescene.actorlayer = display.newNode()
 	gamescene.magiclayer = display.newNode()
@@ -36,6 +44,7 @@ function gamescene.new(scene, scenenode)
 
 	gamescene.scenenode:setTouchEnabled(true)
 	gamescene.scenenode:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
+	gamescene.timer = scheduler.scheduleGlobal(gamescene.update, 0.03 * 1)
 	return gamescene
 end
 
@@ -68,11 +77,17 @@ function gamescene.update(dt)
 end
 
 function gamescene.ontouch(event)
-		print(gamescene.scenenode)
-        printf("node in scene [%s] NODE_EVENT: %s", gamescene.scene.scene.name, event.name)
+		if gamescene.player.currentaction ~= 0 then return end
+        printf("node in scene [%s] NODE_EVENT: %s", gamescene.scenenode.name, event.name)
         local x , y = map.getmapposition(event.x, event.y)
-        local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
-        gamescene.player_move(dir)
+        if map.canmove(gamescene.player.x, gamescene.player.y) then
+        	print(gamescene.player.x, gamescene.player.y, 1)
+	     
+    	else
+    		print(gamescene.player.x, gamescene.player.y, 0)
+    	end
+   		local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
+	    gamescene.player_move(dir)
         --scene.actor_move(dir)
         --return true
 end
@@ -80,14 +95,15 @@ end
 function gamescene.player_move(dir)
 	if dir < 0 or dir > 7 then return end
 
-	local act = {ident = const.sm_run, d = dir}
+	local act = {ident = const.sm_walk, d = dir}
 	gamescene.player:addaction(act)
+	gamescene.mon:addaction(act)
 end
 
 function gamescene.actor_move(dir)
 	if dir < 0 or dir > 7 then return end
 	--print(gamescene.player.x, gamescene.player.y, dir)
-	local act = {ident = const.sm_run, d = dir}
+	local act = {ident = const.sm_walk, d = dir}
 	gamescene.tmpactor:addaction(act)
 end
 
@@ -98,8 +114,8 @@ end
 function gamescene.msg_createplayer( ... )
 	local actor = actormgr.newplayer(gamescene.actorlayer, 100, 1, "布衣")
 	print("center:",camera.centerx, camera.centery)
-	actor.x = camera.centerx
-	actor.y = camera.centery
+	actor.x = 27
+	actor.y = 40
 	actor.dir = 4
 	gamescene.player = actor
 	map.focusactor(actor)
@@ -119,6 +135,14 @@ function gamescene.msg_createplayer( ... )
 	--local effect = magic.create_actoreffect(effectconfig[2], actor)
 	--actor:addeffect(effect)
 	uiplayerinfo.setplayer(actor)
+
+	local mon = monster.new(monsterconfig["雪人王"])
+	gamescene.actorlayer:addChild(mon.cc_sprite)
+	mon.x = 27
+	mon.y = 41
+	mon.dir = 4
+	gamescene.mon = mon
+	table.insert(actormgr.actorlist, mon)
 end
 
 function gamescene.msg_walk( ... )

@@ -34,9 +34,12 @@ function playerinfo.new(scene)
 	pi.cc_mp:setPosition(112, utils.righty(68))
 	 
 
-	cc.ui.UILabel.new({text = "0/0", size = 15})
-        :align(display.CENTER, 10, 5)  
-        :addTo(pi.cc_hp)
+	pi.cc_hptext = cc.ui.UILabel.new({text = "0/0", size = 15})
+    pi.cc_hptext:align(display.CENTER, 65, 10)  
+    	:addTo(pi.cc_hp)
+	pi.cc_mptext = cc.ui.UILabel.new({text = "0/0", size = 15})
+    pi.cc_mptext:align(display.CENTER, 65, 10)  
+    	:addTo(pi.cc_mp)
 end
 
 function playerinfo.update(tick)
@@ -47,11 +50,13 @@ function playerinfo.update(tick)
 		pi.hp = hp
 		pi.hprect.width = math.floor(pi.hpwidth * hp / (hpmax + 1))
 		playerinfo.cc_hp:setTextureRect(pi.hprect)
+		pi.cc_hptext:setString(hp.."/"..hpmax)
 	end
 	if mp ~= pi.mp then
 		local mp, mpmax = atti.mp, mpmax
 		pi.mprect.width = math.floor(pi.mpwidth * mp / (mpmax + 1))
 		playerinfo.cc_mp:setTextureRect(pi.mprect)
+		pi.cc_mptext:setString(mp.."/"..mpmax)
 	end
 end
 

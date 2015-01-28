@@ -114,8 +114,8 @@ end
 function quadtree.get(node, rect)
 	local r = {}
 	local n = quadtree.find_node(node, rect, node)
-	printrect(rect)
-	printrect(n.rect)
+	--printrect(rect)
+	--printrect(n.rect)
 	if n then wget(n, r) end
 	return r
 end
@@ -132,7 +132,7 @@ function quadtree.print_tree(node)
 	quadtree.print_tree(node.quadnode[rt])
 	quadtree.print_tree(node.quadnode[rb])
 end
-
+--[[
 -- test
 local rect = {left = 0, top = 0, right = 4096 * 4 , bottom = 4096 * 4}
 local root, cell = {}, {}
@@ -143,4 +143,5 @@ quadtree.split(root, rect, 5)
 local r = {left = 1024, top = 0, right = 1025, bottom = 1}
 local n = quadtree.find_node(root, r, root)
 printrect(n.rect)
+]]
 return quadtree

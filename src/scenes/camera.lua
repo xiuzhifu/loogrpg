@@ -71,6 +71,10 @@ function camera.getcamerarect()
 		right = camera.right * const.mapcellwidth, bottom = camera.bottom * const.mapcellheight}
 end
 
+function camera.getrect()
+	return {left =camera.left, top = camera.top, right = camera.right, bottom = camera.bottom}
+end
+
 function function_name( ... )
 	-- body
 end

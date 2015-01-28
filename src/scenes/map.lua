@@ -27,7 +27,7 @@ local sharedDirector = cc.Director:getInstance()
 function map.loadmap(filename)
 	map.name = filename
 	map.cellimage = {}
-	map.h = mc.load("/map/"..filename..".map")
+	map.h = mc.load("map/"..filename..".map")
 	if not map.h then return false end
 	map.h.width = 4096 * 4
 	map.h.height = 4096 * 4
@@ -41,7 +41,6 @@ function map.loadmap(filename)
 		l = l + 1
 		if b > s then break end
 	end
-	print("l", l)
 	quadtree.split(map.root, rect, l)
 	map.pictures = mc.getpictures()
 	for i,v in ipairs(map.pictures) do
@@ -50,10 +49,21 @@ function map.loadmap(filename)
 		quadtree.insert(map.root, cell)
 	end
 	map.animations = mc.getanimations()
+
+		if map.drawcell then
+		map.scene:removeChile(map.drawcell)
+	end
+	map.drawcell = display.newNode()
+	map.drawcell:setPosition(0, utils.righty(0))
+	map.scene:addChild(map.drawcell)
 end
 
 function map.new(scene)
 	map.scene = scene
+end
+
+function map.canmove(x, y)
+	return mc.canmove(x, y)
 end
 
 function map.move()
@@ -67,13 +77,12 @@ function map.move()
 		local r = camera.getcamerarect()
 		local node = quadtree.get(map.root, r)
 		for i,v in ipairs(node) do
-			print(v.id)
 			local pic = map.pictures[v.id]
-			local image = map.name..'_'..pic.picture..'.png'
+			local image = map.name.."/"..map.name..'_'..pic.picture..'.png'
 			if not map.cellimage[image] then
 				map.cellimage[image] = {}
 				local t = map.cellimage[image] 
-				t.image = sharedTextureCache:addImage("/map/"..image)
+				t.image = sharedTextureCache:addImage("map/"..image)
 				t.cc_sprite = display.newSprite(t.image)
 				display.align(t.cc_sprite, display.LEFT_TOP)		
 				map.scene:addChild(t.cc_sprite)
@@ -92,8 +101,7 @@ function map.move()
 					map.cellimage[k] = nil
 				end
 			end
-		end
-			
+		end		
 	end
 end
 

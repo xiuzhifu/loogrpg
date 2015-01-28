@@ -86,6 +86,8 @@ function actor:move(tick)
 		self:recalcoffset(tick) 
 	end
 	local tx, ty = camera.getposincamera(self.x, self.y)
+	tx = tx + self.offsetx
+	ty = ty + self.offsety
 	if self.drawx ~= tx or self.drawy ~= ty then
 		self.drawx = tx
 		self.drawy = ty

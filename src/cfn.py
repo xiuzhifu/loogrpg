@@ -20,16 +20,16 @@ cfg.close()
 #配置文件
 pathname = os.path.basename(os.getcwd())
 fp = open("./" + pathname + ".lua", "w")
-fp.write("return = {\n")
+fp.write("return {\n")
 
 for item in os.listdir("."):
 	if os.path.isdir(item):
 		if actioncfg[item]:
-			changename = True
+			changename = False
 			for key, it in actioncfg[item].items():
 				index = 1
 				print(key, item)
-				fp.write("	" + key + " = {")
+				fp.write("	[" + key + "] = {")
 				fp.write("start = \"" + item + "\"")
 				for filename in os.listdir(item):
 					global index
@@ -42,7 +42,7 @@ for item in os.listdir("."):
 				index -= 1
 				fp.write( ", count = " + str(index // 8))
 				fp.write(", time = " + it["time"].strip())
-				fp.write(", movestep = " + it["movestep"].strip() +"}\n")
+				fp.write(", movestep = " + it["movestep"].strip() +"},\n")
 
 fp.write("}\n")
 fp.close()
