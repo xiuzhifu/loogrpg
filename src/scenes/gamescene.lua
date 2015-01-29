@@ -41,7 +41,7 @@ function gamescene.new(scene)
 	gamescene.msg_createplayer()
 	uiplayerinfo.new(gamescene.uilayer)
 	table.insert(gamescene.uilist, uiplayerinfo)
-
+	
 	gamescene.scenenode:setTouchEnabled(true)
 	gamescene.scenenode:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
 	gamescene.timer = scheduler.scheduleGlobal(gamescene.update, 0.03 * 1)
@@ -54,11 +54,11 @@ end
 
 function gamescene.update(dt)
 	gamescene.tick = gamescene.tick + math.floor(dt * 1000)
-	
 	gamescene.player:update(gamescene.tick)
 	map.move(gamescene.tick)
 	map.update(gamescene.tick)
 	map.setactorposition()
+
 	for i,v in ipairs(actormgr.actorlist) do
 		v:update(gamescene.tick)
 	end
@@ -95,8 +95,9 @@ end
 function gamescene.player_move(dir)
 	if dir < 0 or dir > 7 then return end
 
-	local act = {ident = const.sm_walk, d = dir}
+	local act = {ident = const.sm_run, d = dir}
 	gamescene.player:addaction(act)
+	act = {ident = const.sm_walk, d = dir}
 	gamescene.mon:addaction(act)
 end
 

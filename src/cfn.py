@@ -1,6 +1,19 @@
 import os
+import sys
 #读取配置 time 消息编号
-cfg = open("./config.txt", "r")
+if len(sys.argv) > 2:
+	configname = sys.argv[1]
+	changename = sys.argv[2]
+	if changename.lower() == "true":
+		changename = True
+	else:
+		changename = False
+else:
+	configname = "config.txt"
+	changename = False
+cfg = open(configname, "r")
+if not cfg:
+	exit()
 actioncfg = {}
 for line in cfg:
 	pos = line.index("=")
@@ -25,14 +38,12 @@ fp.write("return {\n")
 for item in os.listdir("."):
 	if os.path.isdir(item):
 		if actioncfg[item]:
-			changename = False
 			for key, it in actioncfg[item].items():
 				index = 1
 				print(key, item)
 				fp.write("	[" + key + "] = {")
 				fp.write("start = \"" + item + "\"")
 				for filename in os.listdir(item):
-					global index
 					fn = "./" + item + "/" + filename
 					#需要改名
 					if changename:

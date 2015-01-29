@@ -16,8 +16,6 @@ function actor.new(config)
 	t.offsetx = 0
 	t.offsety = 0
 	t.dir = 0
-	t.skip = 0
-	t.action = {}
 	t.drawstart = 0
 	t.startframe = 0
 	t.currentframe = 0
@@ -32,7 +30,7 @@ function actor.new(config)
 	t.actionlist = {}
 	t.attri = {}
 
-	t.action = config
+	t.config = config
 
 	t.cc_sprite = display.newNode()
 	return t
@@ -40,37 +38,30 @@ end
 
 function actor:setdress(dress)
 	self.dress = dress
-	local image = imagemgr:getimage(self.dress.images, self.dress.start)
+	local image = imagemgr:getimage2(self.dress.images, self.config[0].start,1)
 	self.cc_dress = display.newSprite(image)
 	self.cc_sprite:addChild(self.cc_dress)
-	if self.dress.effectstart then
-		self.cc_dresseffect = display.newSprite(image)
-		self.cc_sprite:addChild(t.cc_dresseffect)
-	end
 end
 
 function actor:setweapon(weapon)
 	self.weapon = weapon
-	local image = imagemgr:getimage(self.dress.images, self.dress.start)
+	local image = imagemgr:getimage2(self.weapon.images, self.config[0].start,1)
 	self.cc_weapon = display.newSprite(image)
 	self.cc_sprite:addChild(t.cc_weapon)
-	if self.weapon.effectstart then
-		self.cc_weaponeffect = display.newSprite(image)
-		self.cc_sprite:addChild(t.cc_weaponeffect)
-	end
 end
 
 function actor:recalcoffset(tick)
-	local t = const.mapcellwidth * self.movestep / (self.framecount - self.skip)
+	local t = const.mapcellwidth * self.movestep / (self.maxframe)
 	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
-	t = const.mapcellheight * self.movestep / (self.framecount - self.skip)
+
+	t = const.mapcellheight * self.movestep / (self.maxframe)
 	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
 end
 function actor:move(tick)
 	if tick - self.lastframetime > self.frametime then
 		self.currentframe = self.currentframe + 1
 		self.lastframetime = tick
-		if self.currentframe + self.startframe > self.maxframe then 
+		if self.currentframe > self.maxframe then 
 			self.x = self.x + utils.actordir[self.dir + 1][1] * self.movestep
 			self.y = self.y + utils.actordir[self.dir + 1][2] * self.movestep
 			self.offsetx = 0
@@ -86,8 +77,8 @@ function actor:move(tick)
 		self:recalcoffset(tick) 
 	end
 	local tx, ty = camera.getposincamera(self.x, self.y)
-	tx = tx + self.offsetx
-	ty = ty + self.offsety
+	--tx = tx + self.offsetx
+	--ty = ty + self.offsety
 	if self.drawx ~= tx or self.drawy ~= ty then
 		self.drawx = tx
 		self.drawy = ty
@@ -98,57 +89,25 @@ end
 function actor:recalcframe()
 	local act
 	self.movestep = 0
-	if self.currentaction == const.sm_walk then
-		act = self.action.walk
-		self.movestep = 1
-	elseif self.currentaction == const.sm_run then
-		act = self.action.run
-		self.movestep = 2
-	elseif self.currentaction == const.sm_hit then
-		act = self.action.hit	
-	elseif self.currentaction == const.sm_magic then
-		act = self.action.hit
-	elseif self.currentaction == const.sm_behit then
-		act = self.action.behit
-	elseif self.currentaction == const.sm_death then
-		act = self.action.death
-	else
-		act = self.action.stand
-	end
-	if act then
-		self.currentframe = -1
-		self.framecount = act.count + act.skip
-		self.skip = act.skip
-		self.startframe = act.start
-		self.maxframe = self.startframe + act.count - 1
-		self.frametime = act.time
-	end
+	local act = self.config[self.currentaction]
+	if not act then act = self.action[0] end
+	self.movestep = act.movestep
+	self.currentframe = 0--会先加1
+	self.action = act
+	self.maxframe = act.count
+	self.frametime = act.time
 end
 
 function actor:draw()
 	local image
 	if self.dress then
-		image = imagemgr:getimage(self.dress.images, self.dress.start + self.startframe + 
-			self.framecount * self.dir + self.currentframe)
+		image = imagemgr:getimage2(self.dress.images, self.action.start, self.maxframe * self.dir + self.currentframe)
 		if image then self.cc_dress:setSpriteFrame(image) end
-
-		if self.dress.effectstart then
-			image = imagemgr:getimage(self.dress.images, self.dress.effectstart + self.startframe + 
-				self.framecount * self.dir + self.currentframe)
-			if image then self.cc_dresseffect:setSpriteFrame(image) end
-		end
 	end
 	
 	if self.weapon then
-		image = imagemgr:getimage(self.weapon.images, self.weapon.start + self.startframe + 
-			self.framecount * self.dir + self.currentframe)
+		image = imagemgr:getimage2(self.weapon.images, self.action.start, self.maxframe * self.dir + self.currentframe)
 		if image then self.cc_weapon:setSpriteFrame(image) end
-
-		if self.weapon.effectstart then
-			image = imagemgr:getimage(self.weapon.images, self.weapon.effectstart + self.startframe + 
-				self.framecount * self.dir + self.currentframe)
-			if image then self.cc_weaponeffect:setSpriteFrame(image) end
-		end
 	end
 end
 

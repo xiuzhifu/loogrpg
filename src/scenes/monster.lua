@@ -16,7 +16,6 @@ function monster.new(config)
 	t.offsetx = 0
 	t.offsety = 0
 	t.dir = 0
-	t.action = {}
 	t.drawstart = 0
 	t.currentframe = 0
 	t.maxframe = 0
@@ -45,8 +44,6 @@ function monster:recalcoffset(tick)
 
 	t = const.mapcellheight * self.movestep / (self.maxframe)
 	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
-
-	print(self.offsetx, self.offsety)
 end
 function monster:move(tick)
 	if tick - self.lastframetime > self.frametime then

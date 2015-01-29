@@ -1,20 +1,25 @@
 local actorconfig = {}
 
-local baseaction =
-{
-	stand = {start = 0  ,count = 4,  skip = 4, time=200},
-	walk =  {start = 64 ,count = 6,  skip = 2, time=50},
-	run =   {start = 128,count = 6,  skip = 2, time=50},
-	hit =   {start = 328,count = 10, skip = 0, time=100},
-	magic = {start = 100,count = 10, skip = 6, time=100},
-	behit = {start = 100,count = 10, skip = 6, time=100},
-	death = {start = 100,count = 10, skip = 6, time=100}
+local baseaction ={
+	[1002] = {start = "attack0", count = 2, time = 100, movestep = 0},
+	[1003] = {start = "attack1", count = 6, time = 100, movestep = 0},
+	[1004] = {start = "attacked", count = 3, time = 50, movestep = 0},
+	[1005] = {start = "death", count = 6, time = 100, movestep = 0},
+	[1006] = {start = "jump", count = 10, time = 100, movestep = 0},
+	[1007] = {start = "magic1", count = 6, time = 100, movestep = 0},
+	[1008] = {start = "magic2", count = 5, time = 100, movestep = 0},
+	[1009] = {start = "push", count = 6, time = 100, movestep = 0},
+	[1001] = {start = "run", count = 12, time = 50, movestep = 2},
+	[1010] = {start = "shoot1", count = 5, time = 100, movestep = 0},
+	[1011] = {start = "shoot2", count = 7, time = 100, movestep = 0},
+	[0] = {start = "stand", count = 6, time = 100, movestep = 0},
+	[1000] = {start = "walk", count = 8, time = 100, movestep = 1},
 }
 
 actorconfig.dresses = {
 	["布衣"] = {
-	start = 0,
-	images = "hum5"
+	images = "women1",
+	action = baseaction,
 	}
 }
 

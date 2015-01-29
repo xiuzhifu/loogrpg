@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>attack1/1.png</key>
+            <key>雪人王/attack1/1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1074,272},{138,132}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/10.png</key>
+            <key>雪人王/attack1/10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,1652},{152,116}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/11.png</key>
+            <key>雪人王/attack1/11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{202,1820},{140,116}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/12.png</key>
+            <key>雪人王/attack1/12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{538,674},{132,122}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/13.png</key>
+            <key>雪人王/attack1/13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1182,956},{112,126}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/14.png</key>
+            <key>雪人王/attack1/14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1406,130},{110,146}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/15.png</key>
+            <key>雪人王/attack1/15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{616,1888},{116,146}}</string>
@@ -95,7 +95,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/16.png</key>
+            <key>雪人王/attack1/16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{346,1652},{168,102}}</string>
@@ -108,7 +108,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/17.png</key>
+            <key>雪人王/attack1/17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{672,828},{126,116}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/18.png</key>
+            <key>雪人王/attack1/18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1892,540},{120,108}}</string>
@@ -134,7 +134,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/19.png</key>
+            <key>雪人王/attack1/19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1214,272},{144,124}}</string>
@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/2.png</key>
+            <key>雪人王/attack1/2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{778,128},{164,126}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/20.png</key>
+            <key>雪人王/attack1/20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{800,818},{132,128}}</string>
@@ -173,7 +173,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/21.png</key>
+            <key>雪人王/attack1/21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1182,818},{108,136}}</string>
@@ -186,7 +186,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/22.png</key>
+            <key>雪人王/attack1/22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1078,550},{130,134}}</string>
@@ -199,7 +199,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/23.png</key>
+            <key>雪人王/attack1/23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1684,1402},{112,112}}</string>
@@ -212,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/24.png</key>
+            <key>雪人王/attack1/24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1918,1264},{128,110}}</string>
@@ -225,7 +225,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/25.png</key>
+            <key>雪人王/attack1/25.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{188,1938},{138,108}}</string>
@@ -238,7 +238,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/26.png</key>
+            <key>雪人王/attack1/26.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{344,1756},{168,114}}</string>
@@ -251,7 +251,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/27.png</key>
+            <key>雪人王/attack1/27.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{608,128},{168,116}}</string>
@@ -264,7 +264,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/28.png</key>
+            <key>雪人王/attack1/28.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{594,254},{98,152}}</string>
@@ -277,7 +277,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/29.png</key>
+            <key>雪人王/attack1/29.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1890,650},{128,116}}</string>
@@ -290,7 +290,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/3.png</key>
+            <key>雪人王/attack1/3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{354,928},{172,124}}</string>
@@ -303,7 +303,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/30.png</key>
+            <key>雪人王/attack1/30.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1276,1940},{106,106}}</string>
@@ -316,7 +316,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/31.png</key>
+            <key>雪人王/attack1/31.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1050,692},{126,124}}</string>
@@ -329,7 +329,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/32.png</key>
+            <key>雪人王/attack1/32.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1518,270},{146,122}}</string>
@@ -342,7 +342,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/33.png</key>
+            <key>雪人王/attack1/33.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{194,1258},{160,122}}</string>
@@ -355,7 +355,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/34.png</key>
+            <key>雪人王/attack1/34.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1518,128},{146,140}}</string>
@@ -368,7 +368,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/35.png</key>
+            <key>雪人王/attack1/35.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{712,400},{118,140}}</string>
@@ -381,7 +381,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/36.png</key>
+            <key>雪人王/attack1/36.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1248,1084},{108,132}}</string>
@@ -394,7 +394,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/37.png</key>
+            <key>雪人王/attack1/37.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1254,1218},{102,132}}</string>
@@ -407,7 +407,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/38.png</key>
+            <key>雪人王/attack1/38.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{672,1230},{108,144}}</string>
@@ -420,7 +420,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/39.png</key>
+            <key>雪人王/attack1/39.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{832,256},{110,152}}</string>
@@ -433,7 +433,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/4.png</key>
+            <key>雪人王/attack1/4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{790,948},{132,132}}</string>
@@ -446,7 +446,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/40.png</key>
+            <key>雪人王/attack1/40.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{172,666},{170,144}}</string>
@@ -459,7 +459,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/41.png</key>
+            <key>雪人王/attack1/41.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{528,930},{126,146}}</string>
@@ -472,7 +472,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/42.png</key>
+            <key>雪人王/attack1/42.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{966,548},{110,142}}</string>
@@ -485,7 +485,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/43.png</key>
+            <key>雪人王/attack1/43.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{514,1398},{138,132}}</string>
@@ -498,7 +498,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/44.png</key>
+            <key>雪人王/attack1/44.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{770,1082},{126,134}}</string>
@@ -511,7 +511,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/45.png</key>
+            <key>雪人王/attack1/45.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{672,674},{114,152}}</string>
@@ -524,7 +524,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/46.png</key>
+            <key>雪人王/attack1/46.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{694,256},{136,142}}</string>
@@ -537,7 +537,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/47.png</key>
+            <key>雪人王/attack1/47.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{944,264},{128,144}}</string>
@@ -550,7 +550,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/48.png</key>
+            <key>雪人王/attack1/48.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{788,674},{126,142}}</string>
@@ -563,7 +563,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/5.png</key>
+            <key>雪人王/attack1/5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{944,130},{156,132}}</string>
@@ -576,7 +576,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/6.png</key>
+            <key>雪人王/attack1/6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{832,410},{134,136}}</string>
@@ -589,7 +589,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/7.png</key>
+            <key>雪人王/attack1/7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1422,906},{122,130}}</string>
@@ -602,7 +602,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/8.png</key>
+            <key>雪人王/attack1/8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{532,798},{138,130}}</string>
@@ -615,7 +615,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attack1/9.png</key>
+            <key>雪人王/attack1/9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{346,1520},{162,130}}</string>
@@ -628,7 +628,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/1.png</key>
+            <key>雪人王/attacked/1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1782,636},{106,130}}</string>
@@ -641,7 +641,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/10.png</key>
+            <key>雪人王/attacked/10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1780,540},{110,94}}</string>
@@ -654,7 +654,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/11.png</key>
+            <key>雪人王/attacked/11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1674,1624},{110,96}}</string>
@@ -667,7 +667,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/12.png</key>
+            <key>雪人王/attacked/12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{554,1296},{116,100}}</string>
@@ -680,7 +680,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/13.png</key>
+            <key>雪人王/attacked/13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1798,1514},{114,96}}</string>
@@ -693,7 +693,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/14.png</key>
+            <key>雪人王/attacked/14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1158,1938},{116,96}}</string>
@@ -706,7 +706,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/15.png</key>
+            <key>雪人王/attacked/15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{574,572},{120,100}}</string>
@@ -719,7 +719,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/16.png</key>
+            <key>雪人王/attacked/16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1774,1728},{96,96}}</string>
@@ -732,7 +732,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/17.png</key>
+            <key>雪人王/attacked/17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1358,1314},{96,96}}</string>
@@ -745,7 +745,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/18.png</key>
+            <key>雪人王/attacked/18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1674,1722},{98,104}}</string>
@@ -758,7 +758,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/19.png</key>
+            <key>雪人王/attacked/19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{536,1182},{114,112}}</string>
@@ -771,7 +771,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/2.png</key>
+            <key>雪人王/attacked/2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{968,410},{108,136}}</string>
@@ -784,7 +784,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/20.png</key>
+            <key>雪人王/attacked/20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{782,1362},{108,114}}</string>
@@ -797,7 +797,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/21.png</key>
+            <key>雪人王/attacked/21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1690,1162},{104,120}}</string>
@@ -810,7 +810,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/22.png</key>
+            <key>雪人王/attacked/22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1674,898},{106,130}}</string>
@@ -823,7 +823,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/23.png</key>
+            <key>雪人王/attacked/23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{898,1082},{104,134}}</string>
@@ -836,7 +836,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/24.png</key>
+            <key>雪人王/attacked/24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{782,1218},{108,142}}</string>
@@ -849,7 +849,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/3.png</key>
+            <key>雪人王/attacked/3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{652,1080},{116,148}}</string>
@@ -862,7 +862,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/4.png</key>
+            <key>雪人王/attacked/4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{580,466},{130,104}}</string>
@@ -875,7 +875,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/5.png</key>
+            <key>雪人王/attacked/5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{328,1938},{132,108}}</string>
@@ -888,7 +888,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/6.png</key>
+            <key>雪人王/attacked/6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{510,1532},{138,118}}</string>
@@ -901,7 +901,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/7.png</key>
+            <key>雪人王/attacked/7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1640,394},{138,106}}</string>
@@ -914,7 +914,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/8.png</key>
+            <key>雪人王/attacked/8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1214,398},{140,110}}</string>
@@ -927,7 +927,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>attacked/9.png</key>
+            <key>雪人王/attacked/9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1360,278},{144,116}}</string>
@@ -940,7 +940,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/1.png</key>
+            <key>雪人王/death/1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1078,406},{128,142}}</string>
@@ -953,7 +953,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/10.png</key>
+            <key>雪人王/death/10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,2},{210,166}}</string>
@@ -966,7 +966,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/11.png</key>
+            <key>雪人王/death/11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,170},{196,154}}</string>
@@ -979,7 +979,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/12.png</key>
+            <key>雪人王/death/12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,814},{182,152}}</string>
@@ -992,7 +992,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/13.png</key>
+            <key>雪人王/death/13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1826},{184,136}}</string>
@@ -1005,7 +1005,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/14.png</key>
+            <key>雪人王/death/14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1406},{184,138}}</string>
@@ -1018,7 +1018,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/15.png</key>
+            <key>雪人王/death/15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{514,1770},{156,116}}</string>
@@ -1031,7 +1031,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/16.png</key>
+            <key>雪人王/death/16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{346,798},{184,128}}</string>
@@ -1044,7 +1044,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/17.png</key>
+            <key>雪人王/death/17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{200,170},{190,146}}</string>
@@ -1057,7 +1057,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/18.png</key>
+            <key>雪人王/death/18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1236,2},{202,126}}</string>
@@ -1070,7 +1070,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/19.png</key>
+            <key>雪人王/death/19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{180,440},{198,118}}</string>
@@ -1083,7 +1083,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/2.png</key>
+            <key>雪人王/death/2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,490},{170,164}}</string>
@@ -1096,7 +1096,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/20.png</key>
+            <key>雪人王/death/20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{380,466},{198,104}}</string>
@@ -1109,7 +1109,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/21.png</key>
+            <key>雪人王/death/21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{174,560},{198,104}}</string>
@@ -1122,7 +1122,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/22.png</key>
+            <key>雪人王/death/22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{344,1398},{168,120}}</string>
@@ -1135,7 +1135,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/23.png</key>
+            <key>雪人王/death/23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{344,674},{192,122}}</string>
@@ -1148,7 +1148,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/24.png</key>
+            <key>雪人王/death/24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1030,2},{204,126}}</string>
@@ -1161,7 +1161,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/25.png</key>
+            <key>雪人王/death/25.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{396,2},{210,126}}</string>
@@ -1174,7 +1174,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/26.png</key>
+            <key>雪人王/death/26.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{608,2},{212,124}}</string>
@@ -1187,7 +1187,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/27.png</key>
+            <key>雪人王/death/27.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1852,2},{202,124}}</string>
@@ -1200,7 +1200,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/28.png</key>
+            <key>雪人王/death/28.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1646,2},{204,124}}</string>
@@ -1213,7 +1213,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/29.png</key>
+            <key>雪人王/death/29.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1558,1284},{130,106}}</string>
@@ -1226,7 +1226,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/3.png</key>
+            <key>雪人王/death/3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,656},{168,156}}</string>
@@ -1239,7 +1239,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/30.png</key>
+            <key>雪人王/death/30.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1818,206},{164,88}}</string>
@@ -1252,7 +1252,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/31.png</key>
+            <key>雪人王/death/31.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{356,1182},{178,112}}</string>
@@ -1265,7 +1265,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/32.png</key>
+            <key>雪人王/death/32.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{188,1116},{166,140}}</string>
@@ -1278,7 +1278,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/33.png</key>
+            <key>雪人王/death/33.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{186,812},{158,144}}</string>
@@ -1291,7 +1291,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/34.png</key>
+            <key>雪人王/death/34.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{194,1524},{150,142}}</string>
@@ -1304,7 +1304,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/35.png</key>
+            <key>雪人王/death/35.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1254,130},{150,140}}</string>
@@ -1317,7 +1317,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/36.png</key>
+            <key>雪人王/death/36.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1360,396},{140,112}}</string>
@@ -1330,7 +1330,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/37.png</key>
+            <key>雪人王/death/37.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1818,296},{160,114}}</string>
@@ -1343,7 +1343,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/38.png</key>
+            <key>雪人王/death/38.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{200,318},{190,120}}</string>
@@ -1356,7 +1356,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/39.png</key>
+            <key>雪人王/death/39.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1546},{190,138}}</string>
@@ -1369,7 +1369,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/4.png</key>
+            <key>雪人王/death/4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{188,1382},{154,140}}</string>
@@ -1382,7 +1382,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/40.png</key>
+            <key>雪人王/death/40.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1262},{182,142}}</string>
@@ -1395,7 +1395,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/41.png</key>
+            <key>雪人王/death/41.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,968},{184,146}}</string>
@@ -1408,7 +1408,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/42.png</key>
+            <key>雪人王/death/42.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1116},{184,144}}</string>
@@ -1421,7 +1421,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/43.png</key>
+            <key>雪人王/death/43.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1506,394},{132,114}}</string>
@@ -1434,7 +1434,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/44.png</key>
+            <key>雪人王/death/44.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1102,130},{150,140}}</string>
@@ -1447,7 +1447,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/45.png</key>
+            <key>雪人王/death/45.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{356,1054},{170,126}}</string>
@@ -1460,7 +1460,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/46.png</key>
+            <key>雪人王/death/46.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{356,1296},{196,100}}</string>
@@ -1473,7 +1473,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/47.png</key>
+            <key>雪人王/death/47.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{374,572},{198,100}}</string>
@@ -1486,7 +1486,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/48.png</key>
+            <key>雪人王/death/48.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{392,360},{200,104}}</string>
@@ -1499,7 +1499,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/49.png</key>
+            <key>雪人王/death/49.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{392,254},{200,104}}</string>
@@ -1512,7 +1512,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/5.png</key>
+            <key>雪人王/death/5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{462,1888},{152,128}}</string>
@@ -1525,7 +1525,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/50.png</key>
+            <key>雪人王/death/50.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{826,548},{138,124}}</string>
@@ -1538,7 +1538,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/51.png</key>
+            <key>雪人王/death/51.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{188,958},{164,156}}</string>
@@ -1551,7 +1551,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/52.png</key>
+            <key>雪人王/death/52.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{214,2},{180,166}}</string>
@@ -1564,7 +1564,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/53.png</key>
+            <key>雪人王/death/53.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1686},{198,138}}</string>
@@ -1577,7 +1577,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/54.png</key>
+            <key>雪人王/death/54.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{396,130},{204,122}}</string>
@@ -1590,7 +1590,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/55.png</key>
+            <key>雪人王/death/55.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{822,2},{206,124}}</string>
@@ -1603,7 +1603,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/56.png</key>
+            <key>雪人王/death/56.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1440,2},{204,124}}</string>
@@ -1616,7 +1616,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/6.png</key>
+            <key>雪人王/death/6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1666,262},{150,130}}</string>
@@ -1629,7 +1629,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/7.png</key>
+            <key>雪人王/death/7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1666,128},{150,132}}</string>
@@ -1642,7 +1642,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/8.png</key>
+            <key>雪人王/death/8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{202,1668},{140,150}}</string>
@@ -1655,7 +1655,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>death/9.png</key>
+            <key>雪人王/death/9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,326},{176,162}}</string>
@@ -1668,7 +1668,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/1.png</key>
+            <key>雪人王/stand1/1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1292,778},{122,132}}</string>
@@ -1681,7 +1681,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/10.png</key>
+            <key>雪人王/stand1/10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1542,646},{126,128}}</string>
@@ -1694,7 +1694,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/11.png</key>
+            <key>雪人王/stand1/11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1786,1028},{126,126}}</string>
@@ -1707,7 +1707,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/12.png</key>
+            <key>雪人王/stand1/12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1910,896},{126,126}}</string>
@@ -1720,7 +1720,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/13.png</key>
+            <key>雪人王/stand1/13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{786,1764},{112,122}}</string>
@@ -1733,7 +1733,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/14.png</key>
+            <key>雪人王/stand1/14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{672,1764},{112,122}}</string>
@@ -1746,7 +1746,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/15.png</key>
+            <key>雪人王/stand1/15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1130,1352},{112,124}}</string>
@@ -1759,7 +1759,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/16.png</key>
+            <key>雪人王/stand1/16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1016,1354},{112,124}}</string>
@@ -1772,7 +1772,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/17.png</key>
+            <key>雪人王/stand1/17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1248,1462},{110,124}}</string>
@@ -1785,7 +1785,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/18.png</key>
+            <key>雪人王/stand1/18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{670,1650},{112,122}}</string>
@@ -1798,7 +1798,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/19.png</key>
+            <key>雪人王/stand1/19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1796,1282},{120,104}}</string>
@@ -1811,7 +1811,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/2.png</key>
+            <key>雪人王/stand1/2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1296,912},{124,132}}</string>
@@ -1824,7 +1824,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/20.png</key>
+            <key>雪人王/stand1/20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1676,1516},{120,106}}</string>
@@ -1837,7 +1837,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/21.png</key>
+            <key>雪人王/stand1/21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1128,1708},{118,106}}</string>
@@ -1850,7 +1850,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/22.png</key>
+            <key>雪人王/stand1/22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1008,1708},{118,106}}</string>
@@ -1863,7 +1863,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/23.png</key>
+            <key>雪人王/stand1/23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1248,1712},{116,106}}</string>
@@ -1876,7 +1876,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/24.png</key>
+            <key>雪人王/stand1/24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1130,1600},{120,106}}</string>
@@ -1889,7 +1889,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/25.png</key>
+            <key>雪人王/stand1/25.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1918,1376},{122,102}}</string>
@@ -1902,7 +1902,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/26.png</key>
+            <key>雪人王/stand1/26.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{528,1078},{122,102}}</string>
@@ -1915,7 +1915,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/27.png</key>
+            <key>雪人王/stand1/27.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1552,1504},{122,104}}</string>
@@ -1928,7 +1928,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/28.png</key>
+            <key>雪人王/stand1/28.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1914,1586},{122,104}}</string>
@@ -1941,7 +1941,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/29.png</key>
+            <key>雪人王/stand1/29.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{892,1356},{122,106}}</string>
@@ -1954,7 +1954,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/3.png</key>
+            <key>雪人王/stand1/3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1286,644},{124,132}}</string>
@@ -1967,7 +1967,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/30.png</key>
+            <key>雪人王/stand1/30.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1914,1480},{122,104}}</string>
@@ -1980,7 +1980,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/31.png</key>
+            <key>雪人王/stand1/31.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1690,1284},{104,116}}</string>
@@ -1993,7 +1993,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/32.png</key>
+            <key>雪人王/stand1/32.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{904,1716},{102,116}}</string>
@@ -2006,7 +2006,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/33.png</key>
+            <key>雪人王/stand1/33.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1384,1928},{104,118}}</string>
@@ -2019,7 +2019,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/34.png</key>
+            <key>雪人王/stand1/34.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1276,1820},{104,118}}</string>
@@ -2032,7 +2032,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/35.png</key>
+            <key>雪人王/stand1/35.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1570,1800},{102,118}}</string>
@@ -2045,7 +2045,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/36.png</key>
+            <key>雪人王/stand1/36.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1490,1928},{102,118}}</string>
@@ -2058,7 +2058,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/37.png</key>
+            <key>雪人王/stand1/37.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1456,1422},{94,124}}</string>
@@ -2071,7 +2071,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/38.png</key>
+            <key>雪人王/stand1/38.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1360,1412},{94,126}}</string>
@@ -2084,7 +2084,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/39.png</key>
+            <key>雪人王/stand1/39.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1912,412},{94,126}}</string>
@@ -2097,7 +2097,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/4.png</key>
+            <key>雪人王/stand1/4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1210,510},{124,132}}</string>
@@ -2110,7 +2110,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/40.png</key>
+            <key>雪人王/stand1/40.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1476,1800},{92,126}}</string>
@@ -2123,7 +2123,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/41.png</key>
+            <key>雪人王/stand1/41.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1382,1800},{92,126}}</string>
@@ -2136,7 +2136,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/42.png</key>
+            <key>雪人王/stand1/42.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{944,1834},{92,126}}</string>
@@ -2149,7 +2149,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/43.png</key>
+            <key>雪人王/stand1/43.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1668,502},{110,132}}</string>
@@ -2162,7 +2162,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/44.png</key>
+            <key>雪人王/stand1/44.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1016,1218},{110,134}}</string>
@@ -2175,7 +2175,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/45.png</key>
+            <key>雪人王/stand1/45.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1558,510},{108,134}}</string>
@@ -2188,7 +2188,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/46.png</key>
+            <key>雪人王/stand1/46.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1448,510},{108,134}}</string>
@@ -2201,7 +2201,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/47.png</key>
+            <key>雪人王/stand1/47.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{834,1888},{108,134}}</string>
@@ -2214,7 +2214,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/48.png</key>
+            <key>雪人王/stand1/48.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1336,510},{110,132}}</string>
@@ -2227,7 +2227,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/5.png</key>
+            <key>雪人王/stand1/5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{654,1398},{124,132}}</string>
@@ -2240,7 +2240,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/6.png</key>
+            <key>雪人王/stand1/6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1128,1218},{124,132}}</string>
@@ -2253,7 +2253,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/7.png</key>
+            <key>雪人王/stand1/7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1892,768},{126,126}}</string>
@@ -2266,7 +2266,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/8.png</key>
+            <key>雪人王/stand1/8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1782,900},{126,126}}</string>
@@ -2279,7 +2279,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>stand1/9.png</key>
+            <key>雪人王/stand1/9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1412,646},{128,128}}</string>
@@ -2292,7 +2292,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/1.png</key>
+            <key>雪人王/walk/1.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1416,776},{126,128}}</string>
@@ -2305,7 +2305,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/10.png</key>
+            <key>雪人王/walk/10.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{924,950},{128,128}}</string>
@@ -2318,7 +2318,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/11.png</key>
+            <key>雪人王/walk/11.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1780,412},{130,126}}</string>
@@ -2331,7 +2331,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/12.png</key>
+            <key>雪人王/walk/12.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{656,946},{132,132}}</string>
@@ -2344,7 +2344,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/13.png</key>
+            <key>雪人王/walk/13.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{894,1464},{114,124}}</string>
@@ -2357,7 +2357,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/14.png</key>
+            <key>雪人王/walk/14.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{780,1478},{112,124}}</string>
@@ -2370,7 +2370,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/15.png</key>
+            <key>雪人王/walk/15.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1038,1816},{116,120}}</string>
@@ -2383,7 +2383,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/16.png</key>
+            <key>雪人王/walk/16.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{794,1604},{108,124}}</string>
@@ -2396,7 +2396,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/17.png</key>
+            <key>雪人王/walk/17.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1798,1388},{114,124}}</string>
@@ -2409,7 +2409,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/18.png</key>
+            <key>雪人王/walk/18.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1796,1156},{120,124}}</string>
@@ -2422,7 +2422,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/19.png</key>
+            <key>雪人王/walk/19.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1252,1588},{110,122}}</string>
@@ -2435,7 +2435,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/2.png</key>
+            <key>雪人王/walk/2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1556,1034},{128,126}}</string>
@@ -2448,7 +2448,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/20.png</key>
+            <key>雪人王/walk/20.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1914,1024},{120,126}}</string>
@@ -2461,7 +2461,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/21.png</key>
+            <key>雪人王/walk/21.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1918,1152},{128,110}}</string>
@@ -2474,7 +2474,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/22.png</key>
+            <key>雪人王/walk/22.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1914,1692},{118,106}}</string>
@@ -2487,7 +2487,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/23.png</key>
+            <key>雪人王/walk/23.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1594,1920},{108,110}}</string>
@@ -2500,7 +2500,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/24.png</key>
+            <key>雪人王/walk/24.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1798,1612},{114,114}}</string>
@@ -2513,7 +2513,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/25.png</key>
+            <key>雪人王/walk/25.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1010,1480},{118,110}}</string>
@@ -2526,7 +2526,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/26.png</key>
+            <key>雪人王/walk/26.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1130,1478},{116,120}}</string>
@@ -2539,7 +2539,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/27.png</key>
+            <key>雪人王/walk/27.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1244,1352},{112,108}}</string>
@@ -2552,7 +2552,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/28.png</key>
+            <key>雪人王/walk/28.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1156,1820},{118,116}}</string>
@@ -2565,7 +2565,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/29.png</key>
+            <key>雪人王/walk/29.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1008,1592},{120,114}}</string>
@@ -2578,7 +2578,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/3.png</key>
+            <key>雪人王/walk/3.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1054,952},{126,128}}</string>
@@ -2591,7 +2591,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/30.png</key>
+            <key>雪人王/walk/30.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1038,1938},{118,96}}</string>
@@ -2604,7 +2604,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/31.png</key>
+            <key>雪人王/walk/31.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{650,1532},{128,116}}</string>
@@ -2617,7 +2617,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/32.png</key>
+            <key>雪人王/walk/32.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1558,1162},{130,120}}</string>
@@ -2630,7 +2630,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/33.png</key>
+            <key>雪人王/walk/33.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1456,1300},{100,120}}</string>
@@ -2643,7 +2643,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/34.png</key>
+            <key>雪人王/walk/34.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1786,768},{104,130}}</string>
@@ -2656,7 +2656,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/35.png</key>
+            <key>雪人王/walk/35.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1670,768},{114,128}}</string>
@@ -2669,7 +2669,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/36.png</key>
+            <key>雪人王/walk/36.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1558,1392},{124,110}}</string>
@@ -2682,7 +2682,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/37.png</key>
+            <key>雪人王/walk/37.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1456,1170},{100,128}}</string>
@@ -2695,7 +2695,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/38.png</key>
+            <key>雪人王/walk/38.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{712,542},{112,130}}</string>
@@ -2708,7 +2708,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/39.png</key>
+            <key>雪人王/walk/39.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1358,1182},{96,130}}</string>
@@ -2721,7 +2721,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/4.png</key>
+            <key>雪人王/walk/4.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1546,906},{126,126}}</string>
@@ -2734,7 +2734,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/40.png</key>
+            <key>雪人王/walk/40.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1454,1038},{100,130}}</string>
@@ -2747,7 +2747,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/41.png</key>
+            <key>雪人王/walk/41.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1686,1030},{98,130}}</string>
@@ -2760,7 +2760,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/42.png</key>
+            <key>雪人王/walk/42.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{904,1590},{102,124}}</string>
@@ -2773,7 +2773,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/43.png</key>
+            <key>雪人王/walk/43.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{734,1888},{98,136}}</string>
@@ -2786,7 +2786,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/44.png</key>
+            <key>雪人王/walk/44.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1178,686},{106,130}}</string>
@@ -2799,7 +2799,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/45.png</key>
+            <key>雪人王/walk/45.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1670,636},{110,130}}</string>
@@ -2812,7 +2812,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/46.png</key>
+            <key>雪人王/walk/46.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1058,818},{122,132}}</string>
@@ -2825,7 +2825,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/47.png</key>
+            <key>雪人王/walk/47.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1004,1082},{116,134}}</string>
@@ -2838,7 +2838,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/48.png</key>
+            <key>雪人王/walk/48.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1358,1046},{94,134}}</string>
@@ -2851,7 +2851,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/5.png</key>
+            <key>雪人王/walk/5.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1122,1084},{124,132}}</string>
@@ -2864,7 +2864,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/6.png</key>
+            <key>雪人王/walk/6.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{892,1218},{122,136}}</string>
@@ -2877,7 +2877,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/7.png</key>
+            <key>雪人王/walk/7.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{916,692},{132,124}}</string>
@@ -2890,7 +2890,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/8.png</key>
+            <key>雪人王/walk/8.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1544,776},{124,128}}</string>
@@ -2903,7 +2903,7 @@
                 <key>sourceSize</key>
                 <string>{520,390}</string>
             </dict>
-            <key>walk/9.png</key>
+            <key>雪人王/walk/9.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{934,818},{122,130}}</string>
@@ -2926,7 +2926,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:35cefcb2ed7d2dc681a725fd10ea0b56$</string>
+            <string>$TexturePacker:SmartUpdate:b3d0b0e437c99fe3cdb09c591ccecd8b$</string>
             <key>textureFileName</key>
             <string>雪人王.png</string>
         </dict>

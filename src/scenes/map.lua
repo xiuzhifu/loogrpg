@@ -107,11 +107,13 @@ end
 
 function map.focusactor(actor)
 	map.actor = actor
-	local action = actor.action
+	--[[
+	local action = actor.config
 	map.walkspeedx = const.mapcellwidth / (action.walk.time * action.walk.count)
 	map.walkspeedy = const.mapcellheight / (action.walk.time * action.walk.count)
 	map.runspeedx = const.mapcellwidth * 2 / (action.run.time * action.run.count)
 	map.runspeedy = const.mapcellheight * 2 / (action.run.time * action.run.count)
+	]]
 end
 
 function map.setactorposition()

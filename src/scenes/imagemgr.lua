@@ -21,7 +21,7 @@ function imagemgr:getimage2(images, action, id)
 			self.images[images] = true
 			display.addSpriteFrames("res/"..images..".plist", "res/"..images..".png")
 		end
-	local name = action.."/"..id..".png"
+	local name = images.."/"..action.."/"..id..".png"
 	if imagemgr.catch[name] then
 		return imagemgr.catch[name]
 	end
