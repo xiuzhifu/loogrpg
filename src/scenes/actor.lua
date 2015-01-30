@@ -51,14 +51,14 @@ function actor:setweapon(weapon)
 end
 
 function actor:recalcoffset(tick)
-	local t = const.mapcellwidth * self.movestep / (self.maxframe)
-	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
+	local t = const.mapcellwidth * self.movestep / self.maxframe
+	self.offsetx = utils.actordir[self.dir + 1][1] * t * self.currentframe
 
-	t = const.mapcellheight * self.movestep / (self.maxframe)
-	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
+	t = const.mapcellheight * self.movestep / self.maxframe
+	self.offsety = utils.actordir[self.dir + 1][2] * t * self.currentframe
 end
 function actor:move(tick)
-	if tick - self.lastframetime > self.frametime then
+	if tick - self.lastframetime >= self.frametime then
 		self.currentframe = self.currentframe + 1
 		self.lastframetime = tick
 		if self.currentframe > self.maxframe then 
@@ -92,10 +92,11 @@ function actor:recalcframe()
 	local act = self.config[self.currentaction]
 	if not act then act = self.action[0] end
 	self.movestep = act.movestep
-	self.currentframe = 0--会先加1
+	self.currentframe = 1--会先加1
 	self.action = act
 	self.maxframe = act.count
 	self.frametime = act.time
+	self:draw()
 end
 
 function actor:draw()

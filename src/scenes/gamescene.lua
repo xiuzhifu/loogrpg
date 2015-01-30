@@ -44,7 +44,7 @@ function gamescene.new(scene)
 	
 	gamescene.scenenode:setTouchEnabled(true)
 	gamescene.scenenode:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
-	gamescene.timer = scheduler.scheduleGlobal(gamescene.update, 0.03 * 1)
+	gamescene.timer = scheduler.scheduleGlobal(gamescene.update, 0.01 * 1)
 	return gamescene
 end
 
@@ -54,10 +54,11 @@ end
 
 function gamescene.update(dt)
 	gamescene.tick = gamescene.tick + math.floor(dt * 1000)
+	
 	gamescene.player:update(gamescene.tick)
+	camera.update(gamescene.tick)
 	map.move(gamescene.tick)
 	map.update(gamescene.tick)
-	map.setactorposition()
 
 	for i,v in ipairs(actormgr.actorlist) do
 		v:update(gamescene.tick)
@@ -78,14 +79,8 @@ end
 
 function gamescene.ontouch(event)
 		if gamescene.player.currentaction ~= 0 then return end
-        printf("node in scene [%s] NODE_EVENT: %s", gamescene.scenenode.name, event.name)
+        --printf("node in scene [%s] NODE_EVENT: %s", gamescene.scenenode.name, event.name)
         local x , y = map.getmapposition(event.x, event.y)
-        if map.canmove(gamescene.player.x, gamescene.player.y) then
-        	print(gamescene.player.x, gamescene.player.y, 1)
-	     
-    	else
-    		print(gamescene.player.x, gamescene.player.y, 0)
-    	end
    		local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
 	    gamescene.player_move(dir)
         --scene.actor_move(dir)
@@ -120,9 +115,8 @@ function gamescene.msg_createplayer( ... )
 	actor.dir = 4
 	gamescene.player = actor
 	map.focusactor(actor)
-	map.move()
+	map.move(gamescene.gettickcount())
 	map.update()
-	map.setactorposition()
 
 	actor = actormgr.newactor(gamescene.actorlayer, 100, 1, "布衣")
 	actor.x = 10

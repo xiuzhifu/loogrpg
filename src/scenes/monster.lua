@@ -40,11 +40,12 @@ end
 
 function monster:recalcoffset(tick)
 	local t = const.mapcellwidth * self.movestep / (self.maxframe)
-	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe + 1)
+	self.offsetx = utils.actordir[self.dir + 1][1] * math.floor(t) * (self.currentframe)
 
 	t = const.mapcellheight * self.movestep / (self.maxframe)
-	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe + 1)
+	self.offsety = utils.actordir[self.dir + 1][2] * math.floor(t) * (self.currentframe)
 end
+
 function monster:move(tick)
 	if tick - self.lastframetime > self.frametime then
 		self.currentframe = self.currentframe + 1
@@ -64,7 +65,7 @@ function monster:move(tick)
 	if self.movestep > 0 then 
 		self:recalcoffset(tick)
 	end
-	local tx, ty = camera.getposincamera(self.x, self.y)
+	local tx, ty = camera.getposincamera2(self.x, self.y)
 	tx = tx + self.offsetx
 	ty = ty + self.offsety
 	if self.drawx ~= tx or self.drawy ~= ty then

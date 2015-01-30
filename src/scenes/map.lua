@@ -1,18 +1,9 @@
---[[
-	1. mode 为地图卷动方式
-		normal 根据图片帧数(类似传奇)
-		flat 按照像素
-		follow 按像素，切镜头跟随(类似魔力宝贝)
-]]
-local normal = 0
-local flat = 1
-local follow = 2
+
 
 local map = {
 root = {},
 x = 0, 
 y = 0,
-mode = flat
 }
 
 local const = require "const"
@@ -49,25 +40,18 @@ function map.loadmap(filename)
 		quadtree.insert(map.root, cell)
 	end
 	map.animations = mc.getanimations()
-
-		if map.drawcell then
-		map.scene:removeChile(map.drawcell)
-	end
-	map.drawcell = display.newNode()
-	map.drawcell:setPosition(0, utils.righty(0))
-	map.scene:addChild(map.drawcell)
 end
 
 function map.new(scene)
 	map.scene = scene
-end
+end 
 
 function map.canmove(x, y)
 	return mc.canmove(x, y)
 end
 
-function map.move()
-	if camera.move(map.actor) then
+function map.move(tick)
+	if camera.move(tick) then
 		--所有地图图片都不显示
 		for k,v in pairs(map.cellimage) do
 			v.visible = false
@@ -107,22 +91,7 @@ end
 
 function map.focusactor(actor)
 	map.actor = actor
-	--[[
-	local action = actor.config
-	map.walkspeedx = const.mapcellwidth / (action.walk.time * action.walk.count)
-	map.walkspeedy = const.mapcellheight / (action.walk.time * action.walk.count)
-	map.runspeedx = const.mapcellwidth * 2 / (action.run.time * action.run.count)
-	map.runspeedy = const.mapcellheight * 2 / (action.run.time * action.run.count)
-	]]
-end
-
-function map.setactorposition()
-	local x, y = camera.getposincamera(map.actor.x, map.actor.y, true)
-	if x ~= map.x or y ~= map.y then
-		map.actor:setposition(x, y)
-		map.x = x
-		map.y = y
-	end
+	camera.focusactor(actor)
 end
 
 function map.getmapposition(x, y)
@@ -131,10 +100,14 @@ end
 
 function map.update()
 	local x, y = camera.getcameraxy()
-	local tempx, tempy = - (x + map.actor.offsetx), - (y + map.actor.offsety)
+	local offsetx, offsety = camera.getcameraoffset()
+	x = x + offsetx
+	y = y + offsety
+	local tempx, tempy = - x, - y
 	if map.lastx == tempx and map.lasty == tempy then
 		return
-	end 
+	end
+
 	map.lastx = tempx 
 	map.lasty = tempy
 	for k,v in pairs(map.cellimage) do

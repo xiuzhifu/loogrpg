@@ -12,10 +12,9 @@ function player:move(tick)
 	if tick - self.lastframetime > self.frametime then
 		self.currentframe = self.currentframe + 1
 		self.lastframetime = tick
-		if self.currentframe + self.startframe > self.maxframe then
-			local dx, dy = utils.getxydirectionbydir(self.dir)
-			self.x = self.x + dx * self.movestep
-			self.y = self.y + dy * self.movestep
+		if self.currentframe > self.maxframe then 
+			self.x = self.x + utils.actordir[self.dir + 1][1] * self.movestep
+			self.y = self.y + utils.actordir[self.dir + 1][2] * self.movestep
 			self.offsetx = 0
 			self.offsety = 0
 			self.currentaction = 0
@@ -25,7 +24,9 @@ function player:move(tick)
 		end	
 		self:draw()
 	end
-	if self.movestep > 0 then self:recalcoffset(tick) end
+	if self.movestep > 0 then 
+		self:recalcoffset(tick) 
+	end
 	return false
 end
 return player

@@ -27,7 +27,7 @@ end
 function actormgr.newplayer(scene, id, type, dress, weapon)
 	local t
 	if actorconfig[type] then
-		t = player.new(actorconfig[type])
+		t = actor.new(actorconfig[type])
 	end
 
 	if dress and actorconfig.dresses[dress] then
