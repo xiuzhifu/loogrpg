@@ -1,11 +1,11 @@
-#include "map.h"
+﻿#include "map.h"
 #include <stdio.h>
 int
 	map_load(struct map *m, const char* filename){
 	FILE * f = fopen(filename, "r");
 	if (f == NULL) return -1;
 	fread(&m->header, sizeof(struct map_header), 1, f);
-	if (m->header.flag[0] != '.' | m->header.flag[1] != 'A' | m->header.flag[2] != 'B' | m->header.flag[3] != 'C') return -2;
+	if ((m->header.flag[0] != '.') | (m->header.flag[1] != 'A') | (m->header.flag[2] != 'B') | (m->header.flag[3] != 'C')) return -2;
 	if (m->header.picture_count > 0){
 		//m->pictures = new struct map_picture[m->header.picture_count];
 		m->pictures = (struct map_picture *)malloc((unsigned long)sizeof(struct map_picture) * m->header.picture_count);
@@ -19,6 +19,7 @@ int
 	};
 	//m->flags = new int16_t[m->header.width * m->header.height];
 	m->flags = (int16_t *)malloc(sizeof(int16_t) * m->header.width * m->header.height);
+	fread(m->flags, sizeof(int16_t), m->header.width * m->header.height, f);  
 
 	return 1;
 }

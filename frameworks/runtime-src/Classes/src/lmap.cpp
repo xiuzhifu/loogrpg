@@ -30,7 +30,7 @@ int
 lmap_canmove(lua_State *L){
 	const uint16_t x = lua_tointeger(L, 1);
 	const uint16_t y = lua_tointeger(L, 2);
-	lua_pushboolean(L, map_flag(MAP, x, y, FLAG_MOVE));
+	lua_pushboolean(L, map_flag(MAP, x, y, FLAG_FLY));
 	return 1;
 }
 
@@ -96,7 +96,8 @@ int open_map(lua_State *L){
 	luaL_Reg l[] = {
 		{ "load", lmap_load },	
 		{ "getpictures", lmap_getpicture },
-		{ "getanimations", lmap_getanimation },  
+		{ "getanimations", lmap_getanimation }, 
+		{ "canmove", lmap_canmove},
 		{ NULL, NULL },
 	};
 	luaL_openlib(L, "map.c", l, 0);

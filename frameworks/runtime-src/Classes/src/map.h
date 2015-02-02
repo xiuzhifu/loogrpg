@@ -8,7 +8,7 @@ struct map_header {
 	uint16_t width;
 	uint16_t height;
 	uint16_t picture_count;
-	uint16_t animation_count;
+	uint16_t animation_count;  
 };
 
 struct map_picture {

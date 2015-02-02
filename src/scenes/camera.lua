@@ -106,24 +106,29 @@ function camera.getcameraoffset()
 end
 
 local i = 0
-function camera.update(tick)
+function camera.update(tick, dt)
 	if camera.mode == normal then
 		camera.offsetx = camera.player.offsetx
 		camera.offsety = camera.player.offsety	
 	elseif camera.mode == flat then
 		if camera.player.currentaction == 1000 then
-			if camera.lasttick == 0 then camera.lasttick = tick end
-			local t = tick - camera.lasttick
-			if t > camera.walktime then return end
-			camera.offsetx =  utils.actordir[camera.player.dir + 1][1] * t * camera.walkspeedx
-			camera.offsety =  utils.actordir[camera.player.dir + 1][2] * t * camera.walkspeedy
+			local tx , ty = utils.actordir[camera.player.dir + 1][1] * dt * camera.walkspeedx, utils.actordir[camera.player.dir + 1][2] * dt * camera.walkspeedy
+			camera.offsetx = math.floor(camera.offsetx + tx) 
+			camera.offsety = math.floor(camera.offsety + ty)
+			if (math.abs(camera.offsetx) >= math.abs(camera.player.offsetx)) or (math.abs(camera.offsety) > math.abs(camera.player.offsety)) then
+				camera.lasttick = 0			
+				camera.offsetx = camera.player.offsetx
+				camera.offsety = camera.player.offsety
+			end
 		elseif camera.player.currentaction == 1001 then
-			if camera.lasttick == 0 then camera.lasttick = tick end
-			local t = tick - camera.lasttick
-			--if t > camera.runtime then return end
-			print(camera.offsetx, camera.player.offsetx, t)
-			camera.offsetx =  utils.actordir[camera.player.dir + 1][1] * t * camera.runspeedx
-			camera.offsety =  utils.actordir[camera.player.dir + 1][2] * t * camera.runspeedy
+			print(dt)
+			local tx , ty = utils.actordir[camera.player.dir + 1][1] * dt * camera.runspeedx, utils.actordir[camera.player.dir + 1][2] * dt * camera.runspeedy
+			camera.offsetx = math.floor(camera.offsetx + tx)
+			camera.offsety = math.floor(camera.offsety + ty)
+			if (math.abs(camera.offsetx) >= math.abs(camera.player.offsetx)) or (math.abs(camera.offsety) > math.abs(camera.player.offsety)) then	
+				camera.offsetx = camera.player.offsetx
+				camera.offsety = camera.player.offsety
+			end
 		end
 	end
 end

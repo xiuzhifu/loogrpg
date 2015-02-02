@@ -54,9 +54,8 @@ end
 
 function gamescene.update(dt)
 	gamescene.tick = gamescene.tick + math.floor(dt * 1000)
-	
 	gamescene.player:update(gamescene.tick)
-	camera.update(gamescene.tick)
+	camera.update(gamescene.tick, dt * 1000)
 	map.move(gamescene.tick)
 	map.update(gamescene.tick)
 

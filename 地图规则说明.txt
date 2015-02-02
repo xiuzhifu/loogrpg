@@ -1,0 +1,2 @@
+地图文件名格式（test.map）						
+图片名字为地图文件名+id。类似：test1.png~testxx.png

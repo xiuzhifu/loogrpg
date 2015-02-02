@@ -51,11 +51,14 @@ function actor:setweapon(weapon)
 end
 
 function actor:recalcoffset(tick)
-	local t = const.mapcellwidth * self.movestep / self.maxframe
+	local t
+	t = const.mapcellwidth * self.movestep / self.maxframe
 	self.offsetx = utils.actordir[self.dir + 1][1] * t * self.currentframe
+	self.offsetx = math.floor(self.offsetx)
 
 	t = const.mapcellheight * self.movestep / self.maxframe
 	self.offsety = utils.actordir[self.dir + 1][2] * t * self.currentframe
+	self.offsety = math.floor(self.offsety)
 end
 function actor:move(tick)
 	if tick - self.lastframetime >= self.frametime then
