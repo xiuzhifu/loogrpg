@@ -47,23 +47,33 @@ function monster:recalcoffset(tick)
 end
 
 function monster:move(tick)
-	if tick - self.lastframetime > self.frametime then
-		self.currentframe = self.currentframe + 1
-		self.lastframetime = tick
-		if self.currentframe > self.maxframe then 
-			self.x = self.x + utils.actordir[self.dir + 1][1] * self.movestep
-			self.y = self.y + utils.actordir[self.dir + 1][2] * self.movestep
-			self.offsetx = 0
-			self.offsety = 0
-			self.currentaction = 0
-			self.movestep = 0
-			self.lastframetime = 0
-			return true
-		end	
+	if self.death then
 		self:draw()
-	end
-	if self.movestep > 0 then 
-		self:recalcoffset(tick)
+	else
+		if tick - self.lastframetime > self.frametime then
+			self.currentframe = self.currentframe + 1
+			self.lastframetime = tick
+			if self.currentframe > self.maxframe then 
+				self.x = self.x + utils.actordir[self.dir + 1][1] * self.movestep
+				self.y = self.y + utils.actordir[self.dir + 1][2] * self.movestep
+				self.offsetx = 0
+				self.offsety = 0
+				
+				self.movestep = 0
+				self.lastframetime = 0
+				self.currentframe = 0
+				if  self.currentaction == 1004 then 
+					self.death = true
+				else
+					self.currentaction = 0
+				end
+				return true
+			end	
+			self:draw()
+		end
+		if self.movestep > 0 then 
+			self:recalcoffset(tick)
+		end
 	end
 	local tx, ty = camera.getposincamera2(self.x, self.y)
 	tx = tx + self.offsetx

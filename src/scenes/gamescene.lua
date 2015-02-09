@@ -24,6 +24,7 @@ local gamescene = {
 }
 local map = require "map"
 local uiplayerinfo = require "ui/uiplayerinfo"
+local uimonsterinfo = require "ui/uimonsterinfo"
 
 function gamescene.new(scene)
 	gamescene.scene = scene
@@ -41,6 +42,9 @@ function gamescene.new(scene)
 	gamescene.msg_createplayer()
 	uiplayerinfo.new(gamescene.uilayer)
 	table.insert(gamescene.uilist, uiplayerinfo)
+
+	uimonsterinfo.new(gamescene.uilayer)
+	table.insert(gamescene.uilist, uimonsterinfo)	
 	
 	gamescene.scenenode:setTouchEnabled(true)
 	gamescene.scenenode:addNodeEventListener(cc.NODE_TOUCH_EVENT, gamescene.ontouch)
@@ -76,23 +80,65 @@ function gamescene.update(dt)
 	end
 end
 
+function gamescene.oneclosetoone(sx, sy, tx, ty, step)
+	local x, y = math.abs(tx - sx), math.abs(ty - sy)
+	if x <= step and y <= step then return true else return false end
+end
+
 function gamescene.ontouch(event)
 		if gamescene.player.currentaction ~= 0 then return end
         --printf("node in scene [%s] NODE_EVENT: %s", gamescene.scenenode.name, event.name)
-        local x , y = map.getmapposition(event.x, event.y)
-   		local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
-	    gamescene.player_move(dir)
-        --scene.actor_move(dir)
-        --return true
+        local tempx, tempy = camera.getposinscene(event.x, utils.righty(event.y))
+        
+        local actor = gamescene.getactor(tempx, tempy)
+        uimonsterinfo.setmon(actor)
+        if actor then
+        	local dir = utils.getdir(actor.x, actor.y, gamescene.player.x, gamescene.player.y)
+        	if dir > -1 then
+	        	if gamescene.oneclosetoone(actor.x, actor.y, gamescene.player.x, gamescene.player.y, 1) then
+	        		gamescene.player_turn(dir)
+	   				gamescene.player_hit(actor)
+	        	else
+	        		--dir = utils.getdir(gamescene.player.x, gamescene.player.y, actor.x, actor.y)
+		    		gamescene.player_move(dir)     
+	        	end
+	        end
+        else
+        	local x , y = map.getmapposition(event.x, event.y)
+   			local dir = utils.getdir(gamescene.player.x, gamescene.player.y, x, y)
+	    	gamescene.player_move(dir)
+		end
+end
+
+function gamescene.getactor(x, y)
+	for i,v in ipairs(actormgr.actorlist) do
+		if math.abs(v.x - x) < 2 and math.abs(v.y - y) < 2 then
+			return v
+		end
+	end
+	return nil
 end
 
 function gamescene.player_move(dir)
 	if dir < 0 or dir > 7 then return end
-
 	local act = {ident = const.sm_run, d = dir}
 	gamescene.player:addaction(act)
-	act = {ident = const.sm_walk, d = dir}
-	gamescene.mon:addaction(act)
+	--act = {ident = const.sm_walk, d = dir}
+	--gamescene.mon:addaction(act)
+end
+
+function gamescene.player_turn(dir)
+	gamescene.player.dir = dir 
+end
+
+function gamescene.player_hit(actor)
+	local act = {ident = const.sm_hit}
+	actor.attri.hp = actor.attri.hp - 200
+	if actor.attri.hp <= 0 then
+	local act = {ident = 1004, d = dir}	
+		actor:addaction(act)
+	end
+	gamescene.player:addaction(act)	
 end
 
 function gamescene.actor_move(dir)
@@ -112,20 +158,15 @@ function gamescene.msg_createplayer( ... )
 	actor.x = 27
 	actor.y = 40
 	actor.dir = 4
+	actor.attri.hp = 1000
+	actor.attri.hpmax = 800
 	gamescene.player = actor
 	map.focusactor(actor)
 	map.move(gamescene.gettickcount())
 	map.update()
-
-	actor = actormgr.newactor(gamescene.actorlayer, 100, 1, "布衣")
-	actor.x = 10
-	actor.y = 10
-	actor.dir = 4
-	actor:setposition(camera.getposincamera(actor.x, actor.y))
-	gamescene.tmpactor = actor
 	--scene.msg_magic()
 	--scene.msg_fixeffect()
-	gamescene.msg_flyeffect()
+	--gamescene.msg_flyeffect()
 	--local effect = magic.create_actoreffect(effectconfig[2], actor)
 	--actor:addeffect(effect)
 	uiplayerinfo.setplayer(actor)
@@ -135,6 +176,8 @@ function gamescene.msg_createplayer( ... )
 	mon.x = 27
 	mon.y = 41
 	mon.dir = 4
+	mon.attri.hp = 1000
+	mon.attri.hpmax = 1000
 	gamescene.mon = mon
 	table.insert(actormgr.actorlist, mon)
 end
@@ -160,9 +203,9 @@ end
 function gamescene.msg_flyeffect( ... )
 	--local effect = magic.create_flyeffect(effectconfig[3], scene.magiclayer, 20, 10, 10, 10,effectconfig[1])
 
-	local effect = magic.create_flyeffect(effectconfig[3], gamescene.magiclayer, gamescene.tmpactor.x, 
-		gamescene.tmpactor
-		, 20, 15, effectconfig[1], gamescene.tmpactor)
+	local effect = magic.create_flyeffect(effectconfig[3], gamescene.magiclayer, gamescene.player.x, 
+		gamescene.player
+		, 20, 15, effectconfig[1], gamescene.player)
 	
 end
 

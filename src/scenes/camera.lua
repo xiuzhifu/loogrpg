@@ -21,7 +21,7 @@ camera =
 	centerx =0, 
 	centery =0, 
 	player = nil,
-	mode = flat,
+	mode = normal,
 	lasttick = 0,
 }
 function camera.init(width, height)
@@ -52,7 +52,7 @@ function camera.move(tick)
 	camera.offsetx = 0
 	camera.offsety = 0
 	camera.lasttick = 0
-	if camera.x and camera.x then
+	if camera.x and camera.y then
 		camera.left = camera.x - camera.centerx
 		--if camera.left < 0 then camera.left = 0 end
 		camera.right = camera.x + camera.centerx
@@ -84,6 +84,7 @@ function camera.getposincamera2(x, y)
 end
 
 function camera.getposinscene(x, y)
+	x, y = x + camera.centeroffsetx, y + camera.centeroffsety
 	return camera.left + math.floor(x / const.mapcellwidth),
 		camera.top + math.floor(y / const.mapcellheight)
 end

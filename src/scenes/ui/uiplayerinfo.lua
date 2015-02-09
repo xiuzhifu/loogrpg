@@ -52,8 +52,9 @@ function playerinfo.update(tick)
 		playerinfo.cc_hp:setTextureRect(pi.hprect)
 		pi.cc_hptext:setString(hp.."/"..hpmax)
 	end
+	local mp, mpmax = attri.mp, attri.mpmax
+	mp, mpmax = 50, 100
 	if mp ~= pi.mp then
-		local mp, mpmax = atti.mp, mpmax
 		pi.mprect.width = math.floor(pi.mpwidth * mp / (mpmax + 1))
 		playerinfo.cc_mp:setTextureRect(pi.mprect)
 		pi.cc_mptext:setString(mp.."/"..mpmax)
